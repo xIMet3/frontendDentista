@@ -1,5 +1,13 @@
 .headerGeneral {
-    height: 10vh;
+    height: 8vh;
     width: 100vw;
     background-color: burlywood;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.botonDos {
+    margin-right: 2em;
 }
