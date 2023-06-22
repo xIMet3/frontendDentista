@@ -14,10 +14,11 @@ export const Header = () => {
             </div>
             <div className="botonDos">
                 <BotonCambiaVista
-                path={'/LogOut'}
-                name={'LogOut'}
+                path={'/Register'}
+                name={'Registro'}
             />     
             </div>
+            
         </div>
 
     )
