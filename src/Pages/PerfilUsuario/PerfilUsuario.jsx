@@ -1,9 +1,8 @@
 import React from "react";
-import axios from "axios";
-import "./Home.css";
-//import { BotonCambiaVista } from "../../Common/BotonCambiaVista/BotonCambiaVista";
+//import axios from 'axios';
+import "./PerfilUsuario.css";
 
-export const Home = () => {
+export const PerfilUsuario = () => {
   return (
     <div className="homeGeneral">
       <div className="logoPrincipal">
