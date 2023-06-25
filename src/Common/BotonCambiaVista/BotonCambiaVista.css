@@ -10,4 +10,10 @@
     align-items: center;
     justify-content: center;
     color: #0075bb;
+    cursor: pointer;
+}
+
+.botonCambiaVistaDesign:hover {
+        background-color: greenyellow;
+        transition: 0.3s;  
 }

@@ -5,7 +5,7 @@ import "./PerfilUsuario.css";
 export const PerfilUsuario = () => {
   return (
     <div className="homeGeneral">
-      <div className="logoPrincipal">
+      <div className="fondoPrincipal">
         <img src="./img/muelaTatoo.png" alt="" />
       </div>
     </div>

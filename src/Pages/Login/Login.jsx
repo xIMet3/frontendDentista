@@ -6,7 +6,7 @@ import "./Login.css";
 export const Login = () => {
   return (
     <div className="loginGeneral">
-      <div className="logoPrincipal">
+      <div className="fondoPrincipal">
         <img src="./img/muelaTatoo.png" alt="" />
       </div>
     </div>

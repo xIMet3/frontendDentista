@@ -7,7 +7,7 @@ import './Register.css';
 export const Register = () => {
     return (
         <div className='registerGeneral'>
-            <div className="logoPrincipal">
+            <div className="fondoPrincipal">
             <img src="./img/muelaTatoo.png" alt="" />
             </div>
         

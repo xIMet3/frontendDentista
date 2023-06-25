@@ -1,8 +1,8 @@
 import React from "react";
-import axios from "axios";
-import "./ZonaAdmin.css";
+import "./CitasCliente.css";
+//import axios from "axios";
 
-export const ZonaAdmin = () => {
+export const CitasCliente = () => {
     return (
       <div className="homeGeneral">
         <div className="fondoPrincipal">
