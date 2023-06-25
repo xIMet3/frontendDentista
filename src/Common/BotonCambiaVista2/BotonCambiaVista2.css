@@ -1,16 +1,16 @@
 .botonCambiaVista2Design {
     height: 2.5em;
     width: 6em;
-    background-color: white;
-    margin: 1em;
+    background-color: transparent;
     border-radius: 2em;
     font-weight: bold;
     font-size: larger;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #002e60;
+    color: #0075bb;
     cursor: pointer;
+    font-size: xx-large;
 }
 
 .botonCambiaVista2Design:hover {

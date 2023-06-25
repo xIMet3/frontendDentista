@@ -3,17 +3,22 @@ import "./Header.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { BotonCambiaVista } from "../../Common/BotonCambiaVista/BotonCambiaVista";
+import { BotonCambiaVista2 } from "../BotonCambiaVista2/BotonCambiaVista2";
+
 
 export const Header = () => {
   return (
     <div className="navbarComun">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">GEEKS DENTAL</Navbar.Brand>
+          <Navbar.Brand >
+            <BotonCambiaVista2 path={"/Home"} name={"GEEKSDENT"} />
+          </Navbar.Brand>
           <Nav className="navbar-links">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Regístrate</Nav.Link>
-            <Nav.Link href="#pricing">Log In</Nav.Link>
+          <BotonCambiaVista path={"/Login"} name={"Login"} />
+          <BotonCambiaVista path={"/Register"} name={"Regístrate"} />
+            
           </Nav>
         </Container>
       </Navbar>
