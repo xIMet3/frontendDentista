@@ -14,7 +14,9 @@
 }
 
 .botonCambiaVista2Design:hover {
-    background-color: greenyellow;
-    transition: 0.3s;
+    /* background-color: greenyellow;
+    transition: 0.3s; */
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
 
 }
