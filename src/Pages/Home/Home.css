@@ -2,39 +2,30 @@
   height: 92em;
   width: 100vw;
   background-color: white;
-  position: relative; /* Agregamos position: relative para que los elementos internos utilicen este como referencia de apilamiento */
+  position: relative;
 }
 
 .fondoPrincipal {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
 
 .cardsIzquierda {
-  position: absolute;
-  z-index: 3; /* Aumentamos el z-index para que cardsIzquierda se superponga a fondoPrincipal */
-  width: 50%;
-  height: 100%;
-  /* background-color: cornflowerblue; */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.card-overlay {
-  position: absolute;
-  z-index: 2;
-  border: 0.2em solid black;
-  border-radius: 1em;
-  padding: 1em;
-  width: 25em;
-  margin-left: 7em;
-  transform: translate(-50%, -50%);
-  margin-top: 10em;
-}
+    position: relative; /* Cambia a position: relative */
+    display: flex;
+    flex-direction: column; /* Añade flex-direction: column para colocar las tarjetas en una columna */
+    align-items: flex-start; /* Ajusta la alineación vertical de las tarjetas */
+    justify-content: space-between; /* Añade espacio vertical entre las tarjetas */
+  }
+  
+  .primeraCard,
+  .segundaCard,
+  .terceraCard {
+    margin-bottom: 15em;
+    margin-left: 7em;
+  }
+  
 
 .cardsDerecha {
   position: absolute;
@@ -42,5 +33,4 @@
   right: 0;
   width: 50%;
   height: 100%;
-  /* Estilos adicionales para cardsDerecha */
 }
