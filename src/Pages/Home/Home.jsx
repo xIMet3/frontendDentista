@@ -12,7 +12,11 @@ export const Home = () => {
 
       <div className="cardsIzquierda">
         <div className="primeraCard">
-        <CardComponent />
+        <CardComponent
+          title="REVISIÓN BUCAL"
+          content="Revisión de dientes y encias."
+          buttonText="Más info."
+        />
         </div>
 
         <div className="segundaCard">
