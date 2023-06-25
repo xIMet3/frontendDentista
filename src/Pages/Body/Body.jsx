@@ -6,6 +6,7 @@ import { Register } from "../Register/Register";
 import { PerfilUsuario } from "../PerfilUsuario/PerfilUsuario";
 import { ZonaAdmin } from "../ZonaAdmin/ZonaAdmin";
 import { CitasCliente } from "../CitasCliente/CitasCliente";
+import { CitasDentista } from "../CitasDentista/CitasDentista";
 export const Body = () => {
   return (
     <>
@@ -16,6 +17,7 @@ export const Body = () => {
         <Route path="/perfilUsuario" element={<PerfilUsuario />} />
         <Route path="/zonaAdmin" element={<ZonaAdmin />} />
         <Route path="/citasCliente" element={<CitasCliente />} />
+        <Route path="/citasDentista" element={<CitasDentista />} />
 
         
       </Routes>
