@@ -11,3 +11,9 @@
   align-items: center;
   font-size: large;
 }
+
+.navbarComun {
+  position: relative;
+  z-index: 99;
+}
+

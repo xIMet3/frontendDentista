@@ -7,9 +7,9 @@ export const Home = () => {
   return (
     <div className="padre">
       <div className="paginaEntera">
-        <Container className="">
+        <Container className="zonaCards">
           <Row>
-            <Col>
+            <Col xs={12} md={4}>
               <Row>
                 <div className="primeraCard">
                   <CardComponent
@@ -38,12 +38,12 @@ export const Home = () => {
                 </div>
               </Row>
             </Col>
-            <Col>
+            <Col xs={12} md={4}>
               {/* <div className="fondoPrincipal">
             <img className="img-f" src="./img/muelaTatoo.png" alt="" />
           </div>   */}
             </Col>
-            <Col>
+            <Col xs={12} md={4}>
               <Row>
                 <div className="cuartaCard">
                   <CardComponent
