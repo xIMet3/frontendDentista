@@ -10,9 +10,9 @@
 .navbar-links {
   font-size: large;
 }
-
 .navbarComun {
   position: relative;
   z-index: 99;
+  color: #0075bb;
 }
 

@@ -15,7 +15,7 @@ export const Home = () => {
                   <CardComponent
                     title="REVISIÓN BUCAL"
                     content="Revisión de dientes y encias."
-                    buttonText="Más info."
+                    price="24.95€"
                   />
                 </div>
               </Row>
@@ -24,7 +24,7 @@ export const Home = () => {
                   <CardComponent
                     title="BLANQUEAMIENTO BUCAL"
                     content="Blanqueamiento dental y desinfección de encías."
-                    buttonText="Más info."
+                    price="49.95€"
                   />
                 </div>
               </Row>
@@ -33,7 +33,7 @@ export const Home = () => {
                   <CardComponent
                     title="EXTRACCIÓN"
                     content="Extracción de diente, inicisivo o molar y curetaje."
-                    buttonText="Más info."
+                    price="49.95€"
                   />
                 </div>
               </Row>
@@ -47,27 +47,27 @@ export const Home = () => {
               <Row>
                 <div className="cuartaCard">
                   <CardComponent
-                    title="REVISIÓN BUCAL"
-                    content="Revisión de dientes y encias."
-                    buttonText="Más info."
+                    title="LIMPIEZA BUCAL"
+                    content="Revisión y limpieza a fondo de dientes y encias"
+                    price="39.95€"
                   />
                 </div>
               </Row>
               <Row>
                 <div className="quintaCard">
                   <CardComponent
-                    title="BLANQUEAMIENTO BUCAL"
-                    content="Blanqueamiento dental y desinfección de dientes y encias."
-                    buttonText="Más info."
+                    title="IMPLANTE"
+                    content="Extracción y colocación de implante."
+                    price="899.95€"
                   />
                 </div>
               </Row>
               <Row>
                 <div className="sextaCard">
                   <CardComponent
-                    title="EXTRACCIÓN"
-                    content="Extracción de diente, inicisivo o molar y curetaje."
-                    buttonText="Más info."
+                    title="ORTODÓNCIA"
+                    content="Estudio y colocación de ortodóncia dental y posterior seguimiento."
+                    price="Desde 2499.95€"
                   />
                 </div>
               </Row>
