@@ -1,11 +1,4 @@
  .card1 {
-    position: absolute;
-    z-index: 2;
-    border: 0.2em solid black;
     border-radius: 1em;
-    padding: 1em;
-    width: 25em;
-    margin-left: 7em;
-    transform: translate(-50%, -50%);
-    margin-top: 10em;
+    width: 100%;
   } 
