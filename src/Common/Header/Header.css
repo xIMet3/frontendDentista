@@ -1,14 +1,13 @@
-.navbar-brand {
+/* .navbar-brand {
   display: flex;
   align-items: center;
   color: white;
   font-weight: bold;
-}
+  justify-content: flex-start;
+
+} */
 
 .navbar-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   font-size: large;
 }
 

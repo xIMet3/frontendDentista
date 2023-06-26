@@ -1,10 +1,9 @@
-.padre {
+/* .padre {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-}
+} */
 .paginaEntera {
-  height: 88.6vh;
+  height: 100vh;
   width: 100vw;
   background-image: url(../../../img/muelaTatoo.png);
   background-repeat: no-repeat;
