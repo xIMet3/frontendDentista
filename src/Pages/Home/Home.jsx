@@ -12,27 +12,31 @@ export const Home = () => {
 
       <div className="cardsIzquierda">
         <div className="primeraCard">
-        <CardComponent
-          title="REVISIÓN BUCAL"
-          content="Revisión de dientes y encias."
-          buttonText="Más info."
-        />
+          <CardComponent
+            title="REVISIÓN BUCAL"
+            content="Revisión de dientes y encias."
+            buttonText="Más info."
+          />
         </div>
 
         <div className="segundaCard">
-        <CardComponent />
+          <CardComponent
+            title="BLANQUEAMIENTO BUCAL"
+            content="Blanqueamiento dental y desinfección de encías."
+            buttonText="Más info."
+          />
         </div>
 
         <div className="terceraCard">
-        <CardComponent />
+          <CardComponent
+            title="EXTRACCIÓN"
+            content="Extracción de diente, inicisivo o molar y curetaje."
+            buttonText="Más info."
+          />
         </div>
-
-
       </div>
 
-      <div className="cardsDerecha">
-        {/* Contenido de cardsDerecha */}
-      </div>
+      <div className="cardsDerecha">{/* Contenido de cardsDerecha */}</div>
     </div>
   );
 };

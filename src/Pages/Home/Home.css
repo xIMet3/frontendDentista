@@ -19,9 +19,7 @@
     justify-content: space-between; /* Añade espacio vertical entre las tarjetas */
   }
   
-  .primeraCard,
-  .segundaCard,
-  .terceraCard {
+  .primeraCard,.segundaCard,.terceraCard {
     margin-bottom: 15em;
     margin-left: 7em;
   }
