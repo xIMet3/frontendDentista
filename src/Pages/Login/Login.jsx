@@ -16,6 +16,7 @@ export const Login = () => {
       <div className="fondoPrincipal">
         <img src="./img/muelaTatoo.png" alt="" />
       </div>
+      
     </div>
 
       // const [user, setUser] = useState ({
