@@ -1,6 +1,6 @@
-import axios from "axios";
-const root = "http://localhost:3000";
+import axios from 'axios';
 
-export const loginUser = async(credentials) => {
-    return await axios.post(`${root}/login`,credentials)
+export const loginUser = async (body) => {
+    let res = await axios.post('http://localhost:3000/login', body)
+    return res.data.token
 }

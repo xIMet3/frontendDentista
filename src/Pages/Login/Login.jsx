@@ -1,49 +1,98 @@
 import React from "react";
 import "./Login.css";
+import { useState } from "react";
 import {InputText} from '../../Common/InputText/InputText'
-import { useNavigate } from "react-router-dom";
-//import { loginUser } from "../../Services/ApiCalls";
+import { loginUser } from "../../Services/ApiCalls"
 import { login } from "../userSlice";
-//import jwtDecode from "jwt-decode";
-//import { useDispatch } from "react-redux";
+import jwtDecode from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 
 
 
+
 export const Login = () => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
-  return (
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    <>
-      <div className="loginGeneral">
-        <div className="formularioLogin">
-          <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formGroupEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Introduce email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-            <Button type="submit">Submit</Button>
-          </Form>
-        </div>
-      </div>
-    
-    </>
+    const inputHandler = ({ target }) => {
+      let { name, value } = target;
+      setUser((prevState) => ({
+          ...prevState,
+          [name] : value
+      }))
+      };
 
-   
+      const submitHandler = (e, body) => {
+        e.preventDefault()
+        loginUser(body)
+        .then(res => {
+            let decoded = jwtDecode(res)
+            dispatch(
+                login({
+                    token: res,
+                    name: decoded.name,
+                    role: decoded.rol
+                })
+            )
+            navigate("/")
+        })
+        }
 
-
-  );
-};
-
-
-
+        return (
+          <>
+              <Container>
+              <Row className="justify-content-center m-5">
+                  <Col
+                  xs={10}
+                  md={6}
+                  >
+                  <Form>
+                      <Form.Group
+                      className="mb-3"
+                      controlId="formBasicEmail"
+                      >
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                          type="email"
+                          name="email"
+                          placeholder="Enter email"
+                          onChange={(e)=>{inputHandler(e)}}
+                      />
+                      </Form.Group>
+      
+                      <Form.Group
+                      className="mb-3"
+                      controlId="formBasicPassword"
+                      >
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                          type="password"
+                          name="password"
+                          placeholder="Password"
+                          onChange={(e)=>{inputHandler(e)}}
+                      />
+                      </Form.Group>
+                      <Button
+                      variant="primary"
+                      type="submit"
+                      onClick={(e)=>{submitHandler(e, user)}}
+                      >
+                      Submit
+                      </Button>
+                  </Form>
+                  </Col>
+              </Row>
+              </Container>
+          </>
+          );
+      };
 export default Login;

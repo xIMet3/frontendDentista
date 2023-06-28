@@ -1,5 +1,6 @@
 .padre {
    margin-top: 3em; 
+   overflow-x: hidden;
 } 
 .paginaEntera {
   height: 100vh;
