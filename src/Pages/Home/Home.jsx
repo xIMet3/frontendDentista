@@ -23,7 +23,7 @@ export const Home = () => {
                 <div className="segundaCard">
                   <CardComponent
                     title="BLANQUEAMIENTO BUCAL"
-                    content="Blanqueamiento dental y desinfección de encías."
+                    content="Blanqueamiento dental."
                     price="49.95€"
                   />
                 </div>
@@ -32,16 +32,13 @@ export const Home = () => {
                 <div className="terceraCard">
                   <CardComponent
                     title="EXTRACCIÓN"
-                    content="Extracción de diente, inicisivo o molar y curetaje."
+                    content="Extracción de pieza dental."
                     price="49.95€"
                   />
                 </div>
               </Row>
             </Col>
             <Col xs={12} md={4}>
-              {/* <div className="fondoPrincipal">
-            <img className="img-f" src="./img/muelaTatoo.png" alt="" />
-          </div>   */}
             </Col>
             <Col xs={12} md={4}>
               <Row>

@@ -1,5 +1,24 @@
 .loginGeneral {
-    height: 92vh;
+    height: 100vh;
     width: 100vw;
     background-color: white;
+}
+
+.loginGeneral {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../../../img/muelaTatoo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+.formularioLogin {
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+    margin-left: 2em;
+    margin-top: 5em;
 }

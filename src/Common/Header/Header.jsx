@@ -12,7 +12,7 @@ export const Header = () => {
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" collapseOnSelect>
         <Container >
           <Navbar.Brand>
-            <BotonCambiaVista2 path={"/Home"} name={"GEEKSDENT"} />
+            <BotonCambiaVista2 path={"/"} name={"GEEKSDENT"} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
