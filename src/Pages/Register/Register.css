@@ -1,11 +1,4 @@
-.registerEntera {
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    background-image: url(../../../img/muelaTatoo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
-    display: flex;
-    align-items: flex-start;
+.formularioRegister {
+    font-weight: bold;
+    color: darkred;
 }

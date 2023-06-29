@@ -20,17 +20,20 @@ export const Login = () => {
   const dispatch = useDispatch();
   // Obtiene la funcion navigate de react-router-dom para la navegacion
   const navigate = useNavigate();
-
+  
+  // Maneja los cambios en los campos de entrada y actualiza el estado "user"
   const inputHandler = ({ target }) => {
     let { name, value } = target;
     setUser((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-  }; // Maneja los cambios en los campos de entrada y actualiza el estado "user"
+  }; 
 
+  // Maneja el envio del formulario y realiza la llamada a la API para iniciar sesion
   const submitHandler = (e, body) => {
-    e.preventDefault(); // Evita el comportamiento predeterminado del evento
+    // Evita el comportamiento predeterminado del evento
+    e.preventDefault(); 
     loginUser(body).then((res) => {
       // Decodifica el token
       let decoded = jwtDecode(res);
@@ -42,11 +45,10 @@ export const Login = () => {
           role: decoded.rol,
         })
       );
-      // Redirige al usuario a la página principal
+      // Redirige al usuario a la pagina principal
       navigate("/");
     });
-  }; // Maneja el envío del formulario y realiza la llamada a la API para iniciar sesión
-
+  }; 
   return (
     <>
       <Container>

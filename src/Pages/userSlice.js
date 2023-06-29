@@ -8,7 +8,7 @@ export const userSlice = createSlice ({
         },
         data: {
             name: "",
-            role: "",
+            role: 3,
         },
     },
 
