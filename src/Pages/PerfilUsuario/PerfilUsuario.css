@@ -1,5 +1,23 @@
-.homeGeneral {
-    height: 92em;
-    width: 100vw;
-    background-color: white;
+.cardPerfilUsuario {
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-image: url(../../../img/muelaTatoo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28%;
+  }
+
+h1 {
+  width: 60%;
+}
+
+p {
+  width: 60%;
+  font-weight: bold;
+  color: darkred;
 }

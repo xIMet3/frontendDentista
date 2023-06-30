@@ -22,6 +22,8 @@ export const userSlice = createSlice ({
             (state.data = {
                 name: payload.name,
                 role: payload.role,
+                phone: payload.phone,
+                email: payload.email
             });    
         },
         logout: (state) => {

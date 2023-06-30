@@ -5,7 +5,6 @@ import CardComponent from "../../Common/Card1/Card1";
 
 export const Home = () => {
   return (
-    <div className="padre">
       <div className="paginaEntera">
         <Container className="zonaCards">
           <Row>
@@ -72,7 +71,6 @@ export const Home = () => {
           </Row>
         </Container>
       </div>
-    </div>
   );
 };
 
