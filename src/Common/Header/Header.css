@@ -1,12 +1,3 @@
-/* .navbar-brand {
-  display: flex;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  justify-content: flex-start;
-
-} */
-
 .navbar-links {
   font-size: large;
 }
@@ -16,4 +7,3 @@
   color: #0075bb;
   width: 100%;
 }
-

@@ -1,22 +1,21 @@
 .botonCambiaVista2Design {
-    height: 2.5em;
-    width: 6em;
-    background-color: transparent;
-    border-radius: 2em;
-    font-weight: bold;
-    font-size: larger;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0075bb;
-    cursor: pointer;
-    font-size: xx-large;
+  height: 2.5em;
+  width: 6em;
+  background-color: transparent;
+  border-radius: 2em;
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0075bb;
+  cursor: pointer;
+  font-size: xx-large;
 }
 
 .botonCambiaVista2Design:hover {
-    /* background-color: greenyellow;
+  /* background-color: greenyellow;
     transition: 0.3s; */
-    transform: scale(1.5);
-    transition: transform 0.3s ease;
-
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
 }

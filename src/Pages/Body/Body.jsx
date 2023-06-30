@@ -20,8 +20,6 @@ export const Body = () => {
         <Route path="/citasCliente" element={<CitasCliente />} />
         <Route path="/citasDentista" element={<CitasDentista />} />
         <Route path="/registrosAdmin" element={<RegistrosAdmin />} />
-
-        
       </Routes>
     </>
   );

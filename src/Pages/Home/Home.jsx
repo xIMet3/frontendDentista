@@ -18,51 +18,47 @@ export const Home = () => {
                 />
               </div>
             </Row>
+            <CardComponent
+              title="LIMPIEZA BUCAL"
+              content="Revisión y limpieza a fondo de dientes y encias"
+              price="39.95€"
+            />
             <Row>
-              <div className="segundaCard">
-                <CardComponent
-                  title="BLANQUEAMIENTO BUCAL"
-                  content="Blanqueamiento dental."
-                  price="49.95€"
-                />
-              </div>
+              <div className="segundaCard"></div>
             </Row>
+            <CardComponent
+              title="IMPLANTE"
+              content="Extracción y colocación de implante."
+              price="899.95€"
+            />
             <Row>
-              <div className="sextaCard">
-                <CardComponent
-                  title="ORTODÓNCIA"
-                  content="Estudio y colocación de ortodóncia dental y posterior seguimiento."
-                  price="Desde 2499.95€"
-                />
-              </div>
+              <div className="sextaCard"></div>
             </Row>
           </Col>
           <Col xs={12} md={4}></Col>
           <Col xs={12} md={4}>
             <Row>
-              <div className="cuartaCard">
-                <CardComponent
-                  title="LIMPIEZA BUCAL"
-                  content="Revisión y limpieza a fondo de dientes y encias"
-                  price="39.95€"
-                />
-              </div>
+              <div className="cuartaCard"></div>
             </Row>
+            <CardComponent
+              title="EXTRACCIÓN"
+              content="Extracción de pieza dental."
+              price="49.95€"
+            />
             <Row>
-              <div className="quintaCard">
-                <CardComponent
-                  title="IMPLANTE"
-                  content="Extracción y colocación de implante."
-                  price="899.95€"
-                />
-              </div>
+              <div className="quintaCard"></div>
             </Row>
+            <CardComponent
+              title="BLANQUEAMIENTO BUCAL"
+              content="Blanqueamiento dental."
+              price="49.95€"
+            />
             <Row>
               <div className="terceraCard">
                 <CardComponent
-                  title="EXTRACCIÓN"
-                  content="Extracción de pieza dental."
-                  price="49.95€"
+                  title="ORTODÓNCIA"
+                  content="Estudio y colocación de ortodóncia dental y posterior seguimiento."
+                  price="Desde 2499.95€"
                 />
               </div>
             </Row>

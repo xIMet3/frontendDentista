@@ -1,8 +1,8 @@
 import React from "react";
 import "./Header.css";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { BotonCambiaVista } from "../../Common/BotonCambiaVista/BotonCambiaVista";
 import { BotonCambiaVista2 } from "../BotonCambiaVista2/BotonCambiaVista2";
 
@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <div className="navbarComun">
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" collapseOnSelect>
-        <Container >
+        <Container>
           <Navbar.Brand>
             <BotonCambiaVista2 path={"/"} name={"GEEKSDENT"} />
           </Navbar.Brand>
@@ -26,29 +26,4 @@ export const Header = () => {
       </Navbar>
     </div>
   );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};

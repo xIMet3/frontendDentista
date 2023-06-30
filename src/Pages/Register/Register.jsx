@@ -40,10 +40,12 @@ export const Register = () => {
   const submitHandler = (e, body) => {
     // Evita la recarga de la pagina al enviar el formulario
     e.preventDefault();
-    registerUser(body).then((res) => {
-      // Navega al home despues de registrar el usuario
-      navigate("/");
-    }).catch(error => console.log(error));
+    registerUser(body)
+      .then((res) => {
+        // Navega al home despues de registrar el usuario
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -75,18 +77,17 @@ export const Register = () => {
                 />
               </Form.Group>
 
-               <Form.Group
-                className="mb-3"
-                controlId="formPhone"
-                >
+              <Form.Group className="mb-3" controlId="formPhone">
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
-                    type="phone"                     //Proxima peticion de número de telefono
-                    name="telephoneNumber"
-                    placeholder="Introduce tu número de teléfono"
-                    onChange={(e)=>{inputHandler(e)}}
+                  type="phone" //Proxima peticion de número de telefono
+                  name="telephoneNumber"
+                  placeholder="Introduce tu número de teléfono"
+                  onChange={(e) => {
+                    inputHandler(e);
+                  }}
                 />
-                </Form.Group> 
+              </Form.Group>
 
               <Form.Group className="mb-3" controlId="formPassword">
                 <Form.Label>Contraseña</Form.Label>

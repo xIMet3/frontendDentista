@@ -1,20 +1,20 @@
 .botonCambiaVistaDesign {
-    height: 2em;
-    width: 6em;
-    background-color: transparent;
-    margin: 0.5em;
-    border-radius: 2em;
-    font-weight: bold;
-    font-size: larger;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0075bb;
-    cursor: pointer;
+  height: 2em;
+  width: 6em;
+  background-color: transparent;
+  margin: 0.5em;
+  border-radius: 2em;
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0075bb;
+  cursor: pointer;
 }
 
 .botonCambiaVistaDesign:hover {
-        background-color: greenyellow;
-        transition: 0.3s;  
-        scale: 1.1;
+  background-color: greenyellow;
+  transition: 0.3s;
+  scale: 1.1;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import "./Card1.css"
+import "./Card1.css";
 
 const CardComponent = ({ title, content, price }) => {
   return (
