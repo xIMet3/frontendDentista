@@ -7,5 +7,5 @@ export const loginUser = async (body) => {
 
 export const registerUser = async (body) => {
     let res = await axios.post('http://localhost:3000/register', body)
-    return res.data.token
+    return res.data
 }

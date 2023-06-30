@@ -19,6 +19,7 @@ export const Header = () => {
             <Nav className="navbar-links">
               <BotonCambiaVista path={"/Login"} name={"LOGIN"} />
               <BotonCambiaVista path={"/Register"} name={"REGÍSTRATE"} />
+              <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
             </Nav>
           </Navbar.Collapse>
         </Container>

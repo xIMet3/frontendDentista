@@ -5,13 +5,13 @@ import "./Card1.css"
 const CardComponent = ({ title, content, price }) => {
   return (
     <div className="card1">
-      <Card>
-        <Card.Body>
+      <div>
+        <div className="bodyCard1">
           <Card.Title>{title}</Card.Title>
           <Card.Text>{content}</Card.Text>
           <div>{price}</div>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };

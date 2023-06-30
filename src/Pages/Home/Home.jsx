@@ -29,11 +29,11 @@ export const Home = () => {
                 </div>
               </Row>
               <Row>
-                <div className="terceraCard">
+              <div className="sextaCard">
                   <CardComponent
-                    title="EXTRACCIÓN"
-                    content="Extracción de pieza dental."
-                    price="49.95€"
+                    title="ORTODÓNCIA"
+                    content="Estudio y colocación de ortodóncia dental y posterior seguimiento."
+                    price="Desde 2499.95€"
                   />
                 </div>
               </Row>
@@ -60,11 +60,11 @@ export const Home = () => {
                 </div>
               </Row>
               <Row>
-                <div className="sextaCard">
+              <div className="terceraCard">
                   <CardComponent
-                    title="ORTODÓNCIA"
-                    content="Estudio y colocación de ortodóncia dental y posterior seguimiento."
-                    price="Desde 2499.95€"
+                    title="EXTRACCIÓN"
+                    content="Extracción de pieza dental."
+                    price="49.95€"
                   />
                 </div>
               </Row>
@@ -75,3 +75,15 @@ export const Home = () => {
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+

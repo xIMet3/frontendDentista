@@ -15,6 +15,7 @@ export const Register = () => {
     name: "",
     email: "",
     password: "",
+    telephoneNumber: "",
   });
 
   // Inicializacion de hook useDispatch para despachar acciones en Redux y useNavigate para navegacion
@@ -42,7 +43,7 @@ export const Register = () => {
     registerUser(body).then((res) => {
       // Navega al home despues de registrar el usuario
       navigate("/");
-    });
+    }).catch(error => console.log(error));
   };
 
   return (
@@ -74,18 +75,18 @@ export const Register = () => {
                 />
               </Form.Group>
 
-              {/* <Form.Group
+               <Form.Group
                 className="mb-3"
                 controlId="formPhone"
                 >
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
                     type="phone"                     //Proxima peticion de número de telefono
-                    name="telephoneNumbre"
+                    name="telephoneNumber"
                     placeholder="Introduce tu número de teléfono"
                     onChange={(e)=>{inputHandler(e)}}
                 />
-                </Form.Group> */}
+                </Form.Group> 
 
               <Form.Group className="mb-3" controlId="formPassword">
                 <Form.Label>Contraseña</Form.Label>
