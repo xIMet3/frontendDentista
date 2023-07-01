@@ -56,11 +56,11 @@ export const Login = () => {
           <Col xs={10} md={6}>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Introduce email"
                   onChange={(e) => {
                     inputHandler(e);
                   }}
@@ -69,11 +69,11 @@ export const Login = () => {
               {/* Se le asigna la funcion inputHandler al evento onChange para manejar los cambios
               en el campo de entrada. */}
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Introduce contraseña"
                   onChange={(e) => {
                     inputHandler(e);
                   }}
@@ -88,7 +88,7 @@ export const Login = () => {
                   submitHandler(e, user);
                 }}
               >
-                Submit
+                Enviar
               </Button>
             </Form>
           </Col>
