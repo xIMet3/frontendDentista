@@ -1,5 +1,29 @@
-.homeGeneral {
-    height: 92em;
-    width: 100vw;
-    background-color: white;
+.formCrearCita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 40em;
+    width: 100%;
+    gap: 1rem;
+    margin: 0 auto; 
+    margin-top: 10em;
 }
+
+.formCrearCita input, .formCrearCita select {
+    width: 100%;
+    background-color: lightblue;
+}
+
+.formCrearCita button {
+    align-self: center;
+    width: 5em;
+    padding: 0.5em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+    background-color: #0075bb;
+
+}
+

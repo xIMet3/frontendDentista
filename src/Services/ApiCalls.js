@@ -36,3 +36,20 @@ export const updateUserData = async (token, userData) => {
   // Devuelve los datos de la respuesta
   return res.data;
 }
+
+export const createAppointment = async (token, appointmentData) => {
+  // Realiza una solicitud usando axios
+  const res = await axios.post(
+    "http://localhost:3000/newAppointment", 
+    // Datos del usuario a actualizar
+    appointmentData, 
+    {
+      headers: {
+        // Agregar el token de autorización en el encabezado de la solicitud
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  // Devuelve los datos de la respuesta
+  return res.data;
+}
