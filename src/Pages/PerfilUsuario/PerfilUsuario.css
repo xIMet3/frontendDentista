@@ -9,7 +9,11 @@
   background-image: url(../../../img/muelaTatoo.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 28%;
+  background-size: 37%;
+}
+
+.perfilUsuarioContainer {
+  width: 60%;
 }
 
 h1 {

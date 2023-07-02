@@ -11,14 +11,28 @@ export const registerUser = async (body) => {
 };
 
 export const fetchUserData = async (token) => {
-  try {
-    const response = await axios.get("http://localhost:3000/profile", {
+    const res = await axios.get("http://localhost:3000/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
-    return response.data;
-  } catch (error) {
-    console.error("Error al obtener los datos del usuario:", error);
-  }
+    return res.data;
 };
+
+// Función para actualizar los datos del usuario
+export const updateUserData = async (token, userData) => {
+  // Realiza una solicitud usando axios
+  const res = await axios.put(
+    "http://localhost:3000/updateProfile", 
+    // Datos del usuario a actualizar
+    userData, 
+    {
+      headers: {
+        // Agregar el token de autorización en el encabezado de la solicitud
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  // Devuelve los datos de la respuesta
+  return res.data;
+}
