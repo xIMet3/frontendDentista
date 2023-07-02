@@ -45,6 +45,9 @@ export const CitasCliente = () => {
         <option value="1">Limpieza bucal</option>
         <option value="2">Extraccion</option>
         <option value="3">Implante</option>
+        <option value="4">Ortodoncia</option>
+        <option value="5">Revisión bucal</option>
+        <option value="6">Blanqueamiento dental</option>
       </select>
 
       <select name="doctor_id" onChange={(e) => inputHandler(e)} id="treatment">
