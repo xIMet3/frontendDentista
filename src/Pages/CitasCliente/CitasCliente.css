@@ -6,16 +6,21 @@
     max-width: 40em;
     width: 100%;
     gap: 1rem;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: 10em;
-}
-
-.formCrearCita input, .formCrearCita select {
+  }
+  
+  .formCrearCita input,
+  .formCrearCita select,
+  .formCrearCita textarea {
     width: 100%;
     background-color: lightblue;
-}
-
-.formCrearCita button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+  }
+  
+  .formCrearCita button {
     align-self: center;
     width: 10em;
     padding: 0.5em 2em;
@@ -24,6 +29,15 @@
     justify-content: center;
     border-radius: 2em;
     background-color: #0075bb;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
 
-}
-
+  .formCrearCita button:hover {
+    background-color: greenyellow;
+  transition: 0.3s;
+  scale: 1.1;
+  }
+  

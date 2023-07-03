@@ -15,7 +15,7 @@ export const CitasCliente = () => {
   // Estado para manejar errores en el formulario
   const [error, setError] = useState("");
 
-  // Estado para mostrar el mensaje "Cita creada con exito"
+  // Estado para mostrar el mensaje de exito
   const [successMessage, setSuccessMessage] = useState("");
 
   // Hook de enrutamiento para redireccionar despues de enviar el formulario
@@ -30,13 +30,13 @@ export const CitasCliente = () => {
     }));
   };
 
-  // Funcion para manejar el envío del formulario
+  // Funcion para manejar el envio del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Valida si todos los campos del formulario estan completos
+    // Valida si todos los campos del formulario estan seleccionados
     if (!body.date || !body.treatment_id || !body.doctor_id) {
-      setError("Por favor, completa todos los campos.");
+      setError("Por favor, selecciona todos los campos.");
       return;
     }
 
@@ -51,7 +51,7 @@ export const CitasCliente = () => {
     }
 
     try {
-      // Llama a la funcion de creación de cita y maneja la respuesta
+      // Llama a la funcion de creacion de cita y maneja la respuesta
       createAppointment(credentials.token, body)
         .then((res) => {
           if (res.success) {
@@ -69,10 +69,10 @@ export const CitasCliente = () => {
 
   return (
     <div>
-      {/* Muestra el mensaje de error, si lo hubiera */}
+      {/* Muestra el mensaje de error, si hubiera */}
       {error && <p>{error}</p>}
       
-      {/* Muestra el mensaje de exito, si lo hubiera */}
+      {/* Muestra el mensaje de exito, si hubiera */}
       {successMessage && <p>{successMessage}</p>}
       
       {/* Formulario para crear la cita */}
@@ -114,10 +114,18 @@ export const CitasCliente = () => {
           <option value="2">Carlos Redondo</option>
         </select>
 
+        {/* Input para agregar comentarios o descripciones */}
+        <textarea
+          className="camposCrearCita"
+          name="description"
+          placeholder="Descripción.."
+          maxLength="150"
+          onChange={(e) => inputHandler(e)}
+        ></textarea>
+
         {/* Boton de envio */}
         <button type="submit">Crear cita</button>
       </form>
     </div>
   );
 };
-
