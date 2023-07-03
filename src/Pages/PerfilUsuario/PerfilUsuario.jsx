@@ -96,15 +96,6 @@ export const PerfilUsuario = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group controlId="formSurname">
-              <Form.Label>Apellidos</Form.Label>
-              <Form.Control
-                type="text"
-                name="surname"
-                value={editedUser.surname}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
             <Form.Group controlId="formPhone">
               <Form.Label>Teléfono</Form.Label>
               <Form.Control
