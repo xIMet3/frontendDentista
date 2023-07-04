@@ -8,6 +8,7 @@ import { ZonaAdmin } from "../ZonaAdmin/ZonaAdmin";
 import { CitasCliente } from "../CitasCliente/CitasCliente";
 import { CitasDentista } from "../CitasDentista/CitasDentista";
 import { RegistrosAdmin } from "../RegistrosAdmin/RegistrosAdmin";
+import UpdateAppointments from "../MisCitas/MisCitas";
 export const Body = () => {
   return (
     <>
@@ -18,6 +19,8 @@ export const Body = () => {
         <Route path="/perfilUsuario" element={<PerfilUsuario />} />
         <Route path="/zonaAdmin" element={<ZonaAdmin />} />
         <Route path="/citasCliente" element={<CitasCliente />} />
+        <Route path="/misCitas" element={<UpdateAppointments />} />
+
         <Route path="/citasDentista" element={<CitasDentista />} />
         <Route path="/registrosAdmin" element={<RegistrosAdmin />} />
       </Routes>

@@ -57,8 +57,8 @@ export const CitasCliente = () => {
           if (res.success) {
             setSuccessMessage("Su cita ha sido creada con éxito");
             setTimeout(() => {
-              navigate("/");
-            }, 3000);
+              navigate("/misCitas");
+            }, 2000);
           }
         })
         .catch((error) => console.log(error));

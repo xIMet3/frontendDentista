@@ -11,21 +11,21 @@ export const registerUser = async (body) => {
 };
 
 export const fetchUserData = async (token) => {
-    const res = await axios.get("http://localhost:3000/profile", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return res.data;
+  const res = await axios.get("http://localhost:3000/profile", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return res.data;
 };
 
 // Función para actualizar los datos del usuario
 export const updateUserData = async (token, userData) => {
   // Realiza una solicitud usando axios
   const res = await axios.put(
-    "http://localhost:3000/updateProfile", 
+    "http://localhost:3000/updateProfile",
     // Datos del usuario a actualizar
-    userData, 
+    userData,
     {
       headers: {
         // Agregar el token de autorización en el encabezado de la solicitud
@@ -35,14 +35,14 @@ export const updateUserData = async (token, userData) => {
   );
   // Devuelve los datos de la respuesta
   return res.data;
-}
+};
 
 export const createAppointment = async (token, appointmentData) => {
   // Realiza una solicitud usando axios
   const res = await axios.post(
-    "http://localhost:3000/newAppointment", 
+    "http://localhost:3000/newAppointment",
     // Datos del usuario a actualizar
-    appointmentData, 
+    appointmentData,
     {
       headers: {
         // Agregar el token de autorización en el encabezado de la solicitud
@@ -52,4 +52,27 @@ export const createAppointment = async (token, appointmentData) => {
   );
   // Devuelve los datos de la respuesta
   return res.data;
-}
+};
+
+export const fetchUserAppointments = async (token) => {
+  const res = await axios.get("http://localhost:3000/allAppointments", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  console.log(res.data);
+  return res.data.data;
+};
+
+export const updateAppointment = async (token, appointmentData) => {
+  const res = await axios.put(
+    `http://localhost:3000/updateAppointment/${appointmentData.id}`,
+    appointmentData,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return res.data;
+};
