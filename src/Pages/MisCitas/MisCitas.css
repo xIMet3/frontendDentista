@@ -1,0 +1,16 @@
+.bodyVista {
+    background-image: url(../../../img/muelaTatoo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+.cardCita {
+    height: auto;
+    max-width: 50em;
+    margin-left: 1em;
+}
+
+h1 {
+    margin-left: 3em;
+}

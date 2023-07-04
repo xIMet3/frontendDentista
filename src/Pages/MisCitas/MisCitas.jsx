@@ -3,6 +3,7 @@ import { updateAppointment, fetchUserAppointments } from '../../Services/ApiCall
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { Button, Modal, Form } from 'react-bootstrap';
+import "./MisCitas.css"
 
 function UpdateAppointments() {
   const { credentials } = useSelector(userData);
@@ -53,11 +54,11 @@ function UpdateAppointments() {
   };
 
   return (
-    <div>
-      <h2>Tus citas</h2>
+    <div className="bodyVista">
+      <h1>Tus citas</h1>
       {appointments.length ? (
         appointments.map((appointment) => (
-          <div key={appointment.id}>
+          <div className='cardCita' key={appointment.id}>
             <p>ID de la cita: {appointment.id}</p>
             <p>Doctor: {appointment.doctor_id}</p>
             <p>Fecha: {appointment.date}</p>
