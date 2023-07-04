@@ -82,7 +82,7 @@ export const CitasCliente = () => {
           className="camposCrearCita"
           type="datetime-local"
           name="date"
-          min="1970-01-01T09:00"
+          min="2023-01-01T09:00"
           max="2100-12-31T19:00"
           step="3600"
           onChange={(e) => inputHandler(e)}
@@ -110,8 +110,8 @@ export const CitasCliente = () => {
           value={body.doctor_id || ""}
         >
           <option value="">Seleccionar doctor</option>
-          <option value="1">Jesús Vázquez</option>
-          <option value="2">Carlos Redondo</option>
+          <option value="1">Dr. Jesús Vázquez</option>
+          <option value="2">Dr. Carlos Redondo</option>
         </select>
 
         {/* Input para agregar comentarios o descripciones */}
