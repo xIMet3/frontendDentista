@@ -43,4 +43,5 @@
   
 textarea {
   max-height: 20em;
+  min-height: 5em;
 }

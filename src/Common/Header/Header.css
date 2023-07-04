@@ -1,9 +1,26 @@
 .navbar-links {
   font-size: large;
+  display: flex;
+  align-items: center;
 }
 .navbarComun {
   position: relative;
   z-index: 99;
   color: #0075bb;
   width: 100%;
+}
+button {
+  background-color: transparent;
+  font-weight: bold;
+  color: #0075bb;
+  cursor: pointer;
+  border-radius: 2em;
+  border: 0;
+  
+}
+
+button:hover {
+  background-color: darkred;
+  transition: 0.3s;
+  scale: 1.2;
 }

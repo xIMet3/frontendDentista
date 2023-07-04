@@ -3,10 +3,23 @@ import "./Header.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useDispatch, useSelector } from "react-redux";
 import { BotonCambiaVista } from "../../Common/BotonCambiaVista/BotonCambiaVista";
 import { BotonCambiaVista2 } from "../BotonCambiaVista2/BotonCambiaVista2";
+import { logout } from "../../Pages/userSlice";
+import { useNavigate } from "react-router";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.user);
+
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/")
+  }
+
   return (
     <div className="navbarComun">
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" collapseOnSelect>
@@ -17,14 +30,22 @@ export const Header = () => {
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="navbar-links">
-              <BotonCambiaVista path={"/Login"} name={"LOGIN"} />
-              <BotonCambiaVista path={"/Register"} name={"REGÍSTRATE"} />
-              <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
-              <BotonCambiaVista path={"/CitasCliente"} name={"PEDIR CITA"} />
+              {userData.credentials.token ? (
+                <>
+                <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
+                <BotonCambiaVista path={"/CitasCliente"} name={"PEDIR CITA"} />
+                <button onClick={handleLogout}>LOGOUT</button>
+                </>
+                ) : (
+                  <>
+                  <BotonCambiaVista path={"/Login"} name={"LOGIN"} />
+                  <BotonCambiaVista path={"/Register"} name={"REGÍSTRATE"} />
+                  </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
   );
-};
+}
