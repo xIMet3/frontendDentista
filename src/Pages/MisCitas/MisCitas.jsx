@@ -17,7 +17,7 @@ function UpdateAppointments() {
   const [showModal, setShowModal] = useState(false);
 
   // Estado para almacenar la cita seleccionada para modificar
-  const [setSelectedAppointment] = useState(null);
+  const [selectedAppointment, setSelectedAppointment] = useState(null);
 
   // Estado para almacenar la cita modificada
   const [modifiedAppointment, setModifiedAppointment] = useState({
@@ -78,7 +78,7 @@ function UpdateAppointments() {
           <div className="cardCita" key={appointment.id}>
             <p>ID cita: {appointment.id}</p>
             <p>Doctor: {appointment.doctor_id}</p>
-            <p>Fecha: {appointment.date}</p>
+            <p>Fecha: {new Date(appointment.date).toLocaleString()}</p>
             <p>Descripción: {appointment.description}</p>
             <Button
               variant="primary"
