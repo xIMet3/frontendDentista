@@ -1,35 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { updateAppointment, fetchUserAppointments } from '../../Services/ApiCalls';
-import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
-import { Button, Modal, Form } from 'react-bootstrap';
-import "./MisCitas.css"
+import React, { useState, useEffect } from "react";
+import {
+  updateAppointment,
+  fetchUserAppointments,
+} from "../../Services/ApiCalls";
+import { useSelector } from "react-redux";
+import { userData } from "../userSlice";
+import { Button, Modal, Form } from "react-bootstrap";
+import "./MisCitas.css";
 
 function UpdateAppointments() {
+  // Obtiene las credenciales de usuario desde el estado global
   const { credentials } = useSelector(userData);
+
+  // Define el estado de las citas y el estado para mostrar o ocultar el modal
   const [appointments, setAppointments] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [selectedAppointment, setSelectedAppointment] = useState(null);
+
+  // Estado para almacenar la cita seleccionada para modificar
+  const [setSelectedAppointment] = useState(null);
+
+  // Estado para almacenar la cita modificada
   const [modifiedAppointment, setModifiedAppointment] = useState({
-    id: '',
-    time: '',
-    date: '',
-    observations: '',
+    id: "",
+    time: "",
+    date: "",
+    description: "",
   });
 
+  // Obtiene las citas del usuario al cargar el componente
   useEffect(() => {
     const getUserAppointments = async () => {
       try {
         const appointments = await fetchUserAppointments(credentials.token);
         setAppointments(appointments);
       } catch (error) {
-        console.error('Error fetching user appointments:', error);
+        console.error("Error fetching user appointments:", error);
       }
     };
 
     getUserAppointments();
   }, []);
 
+  // Maneja el evento de modificar una cita
   const handleModifyAppointment = (appointment) => {
     setSelectedAppointment(appointment);
     setShowModal(true);
@@ -37,19 +49,24 @@ function UpdateAppointments() {
       id: appointment.id,
       time: appointment.time,
       date: appointment.date,
-      observations: appointment.observations,
+      description: appointment.description,
     });
   };
 
+  // Maneja el evento de guardar los cambios realizados en una cita
   const handleSaveChanges = async () => {
     try {
+      // Actualiza la cita
       await updateAppointment(credentials.token, modifiedAppointment);
       setShowModal(false);
-      // Actualizar las citas para reflejar los cambios realizados
-      const updatedAppointments = await fetchUserAppointments(credentials.token);
+
+      // Actualiza las citas y los cambios realizados
+      const updatedAppointments = await fetchUserAppointments(
+        credentials.token
+      );
       setAppointments(updatedAppointments);
     } catch (error) {
-      console.error('Error al guardar los cambios:', error);
+      console.error("Error al guardar los cambios:", error);
     }
   };
 
@@ -58,8 +75,8 @@ function UpdateAppointments() {
       <h1>Tus citas</h1>
       {appointments.length ? (
         appointments.map((appointment) => (
-          <div className='cardCita' key={appointment.id}>
-            <p>ID de la cita: {appointment.id}</p>
+          <div className="cardCita" key={appointment.id}>
+            <p>ID cita: {appointment.id}</p>
             <p>Doctor: {appointment.doctor_id}</p>
             <p>Fecha: {appointment.date}</p>
             <p>Descripción: {appointment.description}</p>
@@ -70,7 +87,6 @@ function UpdateAppointments() {
             >
               Modificar Cita
             </Button>
-            <hr />
           </div>
         ))
       ) : (
@@ -91,7 +107,7 @@ function UpdateAppointments() {
                 readOnly
               />
             </Form.Group>
-            <Form.Group >
+            <Form.Group>
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="text"
@@ -104,16 +120,16 @@ function UpdateAppointments() {
                 }
               />
             </Form.Group>
-            <Form.Group controlId="formAppointmentObservations">
+            <Form.Group controlId="formAppointmentdescription">
               <Form.Label>Descripción</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
-                value={modifiedAppointment.observations}
+                value={modifiedAppointment.description}
                 onChange={(e) =>
                   setModifiedAppointment({
                     ...modifiedAppointment,
-                    observations: e.target.value,
+                    description: e.target.value,
                   })
                 }
               />
@@ -134,4 +150,3 @@ function UpdateAppointments() {
 }
 
 export default UpdateAppointments;
-

@@ -76,3 +76,14 @@ export const updateAppointment = async (token, appointmentData) => {
   );
   return res.data;
 };
+
+export const fetchAllAppointments = async (token, appointmentData) => {
+  const res = await axios.get("http://localhost:3000/appointmentsByDoctor", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    data: appointmentData,
+  });
+  return res.data;
+};
+

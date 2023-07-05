@@ -1,5 +1,22 @@
-.homeGeneral {
-    height: 92em;
-    width: 100vw;
-    background-color: white;
+.citasDoctor {
+    height: auto;
+    min-height: 90vh;
+    background-image: url(../../../img/muelaTatoo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35%;
+}
+
+.cardsCitas {
+    height: auto;
+    max-width: 42em;
+    margin: 1em;
+    border: 0.2em solid #0075bb;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 3em;
 }
