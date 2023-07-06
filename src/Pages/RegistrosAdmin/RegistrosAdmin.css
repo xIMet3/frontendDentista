@@ -1,9 +1,31 @@
+.vistaCompleta {
+    width: 100vw;
+    height: 92vh;
+    background-image: url(../../../img/muelaTatoo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .cardsUsers {
     height: auto;
     max-width: 42em;
     margin: 1em;
-    border: 0.2em solid #0075bb;
     border-radius: 1em;
     display: flex;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: darkred;
+}
+.cardIndividual {
+    border: 0.15em solid darkblue;
+    border-radius: 1em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    max-width: 40em;
+    min-height: 2em;
+    /* min-width: 30em; */
+    padding: 1em;
+
 }
