@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./CitasCliente.css";
+import "./PedirCita.css";
 import { createAppointment } from "../../Services/ApiCalls";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 
-export const CitasCliente = () => {
+export const PedirCita = () => {
   // Obtiene las credenciales del usuario
   const { credentials } = useSelector(userData);
 

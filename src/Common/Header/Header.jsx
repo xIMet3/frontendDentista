@@ -33,7 +33,7 @@ export const Header = () => {
               {userData.credentials.token ? (
                 <>
                 <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
-                <BotonCambiaVista path={"/CitasCliente"} name={"PEDIR CITA"} />
+                <BotonCambiaVista path={"/PedirCita"} name={"PEDIR CITA"} />
                 <BotonCambiaVista path={"/MisCitas"} name={"MIS CITAS"} />
                 <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
                 <BotonCambiaVista path={"/RegistrosAdmin"} name={"USUARIOS"} />
