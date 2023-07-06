@@ -11,6 +11,8 @@ export const DoctorAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   // Utiliza el hook useSelector para obtener los datos del usuario desde el estado global
   const { credentials } = useSelector(userData);
+  // Define el estado local "filter" utilizando el hook useState, inicializado como una cadena vacia
+  const [filter, setFilter] = useState("");
 
   // Utiliza el hook useEffect para cargar las citas del doctor cuando el componente se monte
   useEffect(() => {
@@ -32,20 +34,49 @@ export const DoctorAppointments = () => {
     getAppointments();
   }, []); // Asegura que el efecto solo se ejecute una vez
 
+  // Define la funcion handleChange para manejar el cambio en el campo de busqueda
+  const handleChange = (event) => {
+    setFilter(event.target.value);
+  };
+
   // Renderiza el componente
   return (
     <div className="citasDoctor">
       <h1>Citas pendientes</h1>
-      {/* Comprueba si "appointments" es un array antes de renderizar */}
+      <form className="">
+        <div className="relative">
+          <input className="buscador"
+            type="date"
+            placeholder="Buscar por fecha..."
+            value={filter}
+            onChange={handleChange}
+          />
+        </div>
+      </form>
+      {/* Filtra las citas por fecha o muestra todas si el campo de búsqueda está vacío */}
       {Array.isArray(appointments) &&
-        appointments.map((appointment) => (
-          <div className="cardsCitas" key={appointment.id}>
-            <p>ID cita: {appointment.id}</p>
-            {/* Convierte la fecha a formato local utilizando "toLocaleString()" */}
-            <p>Fecha: {new Date(appointment.date).toLocaleString()}</p>
-            <p>Descripción: {appointment.description}</p>
-          </div>
-        ))}
+        appointments
+          .filter((appointment) => {
+            if (filter === "") {
+              return true; // Mostrar todas las citas si el campo de búsqueda está vacío
+            } else {
+              const appointmentDate = new Date(appointment.date);
+              const filterDate = new Date(filter);
+              return (
+                appointmentDate.getDate() === filterDate.getDate() &&
+                appointmentDate.getMonth() === filterDate.getMonth() &&
+                appointmentDate.getFullYear() === filterDate.getFullYear()
+              );
+            }
+          })
+          .map((appointment) => (
+            <div className="cardsCitas" key={appointment.id}>
+              <p>IDcita: {appointment.id}</p>
+              {/* Convierte la fecha a formato local utilizando "toLocaleString()" */}
+              <p>Fecha: {new Date(appointment.date).toLocaleString()}</p>
+              <p>Descripción: {appointment.description}</p>
+            </div>
+          ))}
     </div>
   );
 };

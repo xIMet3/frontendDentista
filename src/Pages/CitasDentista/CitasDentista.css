@@ -18,5 +18,21 @@
 }
 
 h1 {
-    margin-left: 3em;
+    margin-left: em;
+}
+
+.relative {
+    /* border: 0.15em solid #0075bb; */
+    height: 3em;
+    max-width: 33em;
+    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.buscador {
+    color: darkred;
+    width: 50%;
+    border: 0.15em solid #0075bb;
+    
 }
