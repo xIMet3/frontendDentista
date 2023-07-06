@@ -1,5 +1,9 @@
-.homeGeneral {
-    height: 92em;
-    width: 100vw;
-    background-color: white;
+.cardsUsers {
+    height: auto;
+    max-width: 42em;
+    margin: 1em;
+    border: 0.2em solid #0075bb;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
 }

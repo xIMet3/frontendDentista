@@ -19,7 +19,7 @@ export const fetchUserData = async (token) => {
   return res.data;
 };
 
-// Función para actualizar los datos del usuario
+// Funcion para actualizar los datos del usuario
 export const updateUserData = async (token, userData) => {
   // Realiza una solicitud usando axios
   const res = await axios.put(
@@ -28,7 +28,7 @@ export const updateUserData = async (token, userData) => {
     userData,
     {
       headers: {
-        // Agregar el token de autorización en el encabezado de la solicitud
+        // Agrega el token en el header de la solicitud
         Authorization: `Bearer ${token}`,
       },
     }
@@ -45,7 +45,7 @@ export const createAppointment = async (token, appointmentData) => {
     appointmentData,
     {
       headers: {
-        // Agregar el token de autorización en el encabezado de la solicitud
+        // Agrega el token en el header de la solicitud
         Authorization: `Bearer ${token}`,
       },
     }
@@ -87,3 +87,12 @@ export const fetchAllAppointments = async (token, appointmentData) => {
   return res.data;
 };
 
+export const getAllProfiles = async (token) => {
+  let access = {
+    headers: {
+      Authorization: `Bearer: ${token}`,
+    },
+  };
+  let res = await axios.get(`http://localhost:3000/allProfiles`, access);
+  return res.data;
+};

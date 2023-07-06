@@ -18,9 +18,9 @@ export const DoctorAppointments = () => {
     const getAppointments = async () => {
       try {
         // Llama a la funcion fetchAllAppointments para obtener las citas utilizando el token
-        const result = await fetchAllAppointments(credentials.token, {});
+        const res = await fetchAllAppointments(credentials.token, {});
         // Extrae los datos de las citas del resultado
-        const allAppointments = result.data;
+        const allAppointments = res.data;
         // Actualiza el estado local "appointments" con las citas obtenidas
         setAppointments(allAppointments);
       } catch (error) {
