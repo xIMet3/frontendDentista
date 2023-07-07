@@ -9,6 +9,7 @@ GeeksHubs Academy, Proyecto 5 :
 - [Objetivo 🎯](#objetivo)
 - [Vistas 🖥️](#vistas)
 - [Desarrollo 🔧](#desarrollo)
+- [Credenciales 🔐](#credenciales)
 - [Repositorio 💾](#repositorio)
 - [Agradecimientos 👏](#agradecimientos)
 
@@ -57,11 +58,39 @@ En cuanto al diseño, se han utilizado componentes de Bootstrap y MDB-Bootstrap 
 
 Por último, como herramientas utilitarias hemos usado JWC_DECODED para desencriptar los datos del token recibido por el backend e importar las credenciales correspondientes.
 
+### Credenciales 🔐
+
+Para poder comprobar el funcionamiento puedes logearte como Admin, Doctor y usuario:
+
+#Admin:
+####Email => ximo@mail.com
+####Contraseña => admin123
+
+###### Logeandote como Admin muestra el botón en el header de usuarios donde puedes ver todos los usuarios registrados.
+-----------------------------------------------------
+
+#Doctor:
+####Email => jesus@mail.com ó carlos@mail.com
+####Contraseña =>admin123
+
+###### Logeandote como doctor muestra el botón Agenda donde puedes ver todas las citas pendientes y un buscador que filtra las citas por fecha.
+-----------------------------------------------------
+
+#Usuario:
+####Email => alex@mail.com ó javi@mail.com ó marta@mail.com ó noelia@mail.com
+####Contraseña => admin123
+
+Como usuario tienes limitadas las vistas al home, pedir citas, ver tus citas y ver tu perfil.
+-----------------------------------------------------
+
+Puedes Registar tantos usuarios como quieras siendo el email unico, es decir, solo puedes registrar un email una vez.
+
 ### Agradecimientos 👏
 
 Gracias a todos los compañeros que me han ayudado en especia a Jesus y Edu que me han apoyado desde el minuto uno.
 
 ###  Repositorio en GitHub 💾
 
-https://github.com/xIMet3/frontendDentista
+Frontend: https://github.com/xIMet3/frontendDentista
+Backend: https://github.com/xIMet3/baseDatosDentista
 
