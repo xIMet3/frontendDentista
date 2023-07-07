@@ -11,6 +11,7 @@ GeeksHubs Academy, Proyecto 5 :
 - [Desarrollo 🔧](#desarrollo)
 - [Credenciales 🔐](#credenciales)
 - [Repositorio 💾](#repositorio)
+- [Instalación 💽] (#instalacion)
 - [Agradecimientos 👏](#agradecimientos)
 
 
@@ -87,12 +88,27 @@ Como usuario tienes limitadas las vistas al home, pedir citas, ver tus citas y v
 
 Puedes Registar tantos usuarios como quieras siendo el email unico, es decir, solo puedes registrar un email una vez.
 
-### Agradecimientos 👏
+### Instalación en local
 
-Gracias a todos los compañeros que me han ayudado en especia a Jesus y Edu que me han apoyado desde el minuto uno.
+####Seguiremos los siguientes pasos:
+
+######Clonamos el repositorio $git clone 'url-repository'
+######Instalamos las dependencias $ npm install
+######Conectamos nuestro repositorio con la base de datos $ npx sequelize db:create
+######Ejecutamos las migraciones $ npx sequelize db:migrate
+######Ejecutamos los seeders $ npx sequelize db:seed:all
+######Conectamos el servidor$ npm run dev
+
+####En cuanto al frontend los pasos serán los siguientes:
+
+######Clonar el repositorio
+######$ npm install
+######$ npm run dev
 
 ###  Repositorio en GitHub 💾
 
 Frontend: https://github.com/xIMet3/frontendDentista
 Backend: https://github.com/xIMet3/baseDatosDentista
 
+### Agradecimientos 👏
+Gracias a todos los compañeros que me han ayudado en especial a Jesus y Edu que me han apoyado desde el minuto uno.
