@@ -56,6 +56,8 @@ REDUX-PERSIST y REDUX-THUNK se han añadido como librerias adicionales para la c
 
 En cuanto al diseño, se han utilizado componentes de Bootstrap y MDB-Bootstrap para conseguir un diseño atractivo y responsive.
 
+Para levantar el backend se usa docker en los puertos 3006 y 3007. Una vez levantado el contenedor del docker se puede levantar el servidor del backend y ya se podria usar todas las funcionalidades del frontend con las consultas a la BD.
+
 Por último, como herramientas utilitarias hemos usado JWC_DECODED para desencriptar los datos del token recibido por el backend e importar las credenciales correspondientes.
 
 ### Credenciales 🔐
