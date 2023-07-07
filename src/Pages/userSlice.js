@@ -15,15 +15,15 @@ export const userSlice = createSlice({
   reducers: {
     login: (state, action) => {
       let { payload } = action;
-      (state.credentials = {
+      state.credentials = {
         token: payload.token,
-      }),
-        (state.data = {
+      },
+        state.data = {
           name: payload.name,
-          role: payload.role,
+          role_id: payload.role_id,
           phone: payload.phone,
           email: payload.email,
-        });
+        };
     },
     logout: (state) => {
       return {

@@ -11,17 +11,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export const Login = () => {
-  // Define el estado "user" inicializado con las propiedades email y password vacias
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  // Obtiene la funcion dispatch de react-redux para despachar acciones
+
   const dispatch = useDispatch();
-  // Obtiene la funcion navigate de react-router-dom para la navegacion
   const navigate = useNavigate();
 
-  // Maneja los cambios en los campos de entrada y actualiza el estado "user"
   const inputHandler = ({ target }) => {
     let { name, value } = target;
     setUser((prevState) => ({
@@ -30,25 +27,22 @@ export const Login = () => {
     }));
   };
 
-  // Maneja el envio del formulario y realiza la llamada a la API para iniciar sesion
   const submitHandler = (e, body) => {
-    // Evita el comportamiento predeterminado del evento
     e.preventDefault();
     loginUser(body).then((res) => {
-      // Decodifica el token
       let decoded = jwtDecode(res);
-      // Despacha la accion login con los datos del usuario
       dispatch(
         login({
           token: res,
           name: decoded.name,
           role: decoded.rol,
+          role_id: decoded.roleId, // Agregar roleId a la acción login
         })
       );
-      // Redirige al usuario a la pagina principal
       navigate("/");
     });
   };
+
   return (
     <>
       <Container>
@@ -66,8 +60,6 @@ export const Login = () => {
                   }}
                 />
               </Form.Group>
-              {/* Se le asigna la funcion inputHandler al evento onChange para manejar los cambios
-              en el campo de entrada. */}
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
@@ -78,8 +70,6 @@ export const Login = () => {
                     inputHandler(e);
                   }}
                 />
-                {/* Se crea un boton de tipo de "submit" para enviar el formulario. Se le asigna la funcion 
-              submitHandler al evento onClick, pasando el evento y el objeto 'user' como argumentos.*/}
               </Form.Group>
               <Button
                 variant="primary"
@@ -99,3 +89,4 @@ export const Login = () => {
 };
 
 export default Login;
+

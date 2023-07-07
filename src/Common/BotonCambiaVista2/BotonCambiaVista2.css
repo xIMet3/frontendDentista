@@ -1,6 +1,6 @@
 .botonCambiaVista2Design {
   height: 2.5em;
-  width: 6em;
+  width: 8em;
   background-color: transparent;
   border-radius: 2em;
   font-weight: bold;
@@ -14,8 +14,6 @@
 }
 
 .botonCambiaVista2Design:hover {
-  /* background-color: greenyellow;
-    transition: 0.3s; */
-  transform: scale(1.5);
-  transition: transform 0.3s ease;
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }

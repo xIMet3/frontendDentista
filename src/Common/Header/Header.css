@@ -3,11 +3,13 @@
   display: flex;
   align-items: center;
 }
+
 .navbarComun {
   position: relative;
   z-index: 99;
   color: #0075bb;
   width: 100%;
+  
 }
 button {
   background-color: transparent;

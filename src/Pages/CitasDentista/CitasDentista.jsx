@@ -53,12 +53,13 @@ export const DoctorAppointments = () => {
           />
         </div>
       </form>
-      {/* Filtra las citas por fecha o muestra todas si el campo de búsqueda está vacío */}
+      {/* Filtra las citas por fecha o muestra todas si el campo de busqueda esta vacio */}
       {Array.isArray(appointments) &&
         appointments
           .filter((appointment) => {
             if (filter === "") {
-              return true; // Mostrar todas las citas si el campo de búsqueda está vacío
+              return true; 
+              // Muestra todas las citas si el campo de busqueda esta vacio
             } else {
               const appointmentDate = new Date(appointment.date);
               const filterDate = new Date(filter);

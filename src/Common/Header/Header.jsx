@@ -12,6 +12,7 @@ import { useNavigate } from "react-router";
 export const Header = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.user);
+  const roleId = userData.data.role_id;
 
   const navigate = useNavigate()
 
@@ -35,8 +36,13 @@ export const Header = () => {
                 <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
                 <BotonCambiaVista path={"/PedirCita"} name={"PEDIR CITA"} />
                 <BotonCambiaVista path={"/MisCitas"} name={"MIS CITAS"} />
-                <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
-                <BotonCambiaVista path={"/RegistrosAdmin"} name={"USUARIOS"} />
+                {roleId === 2 && (
+                  <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
+                )}
+
+                {roleId === 1 && (
+                  <BotonCambiaVista path={"/RegistrosAdmin"} name={"USUARIOS"} />
+                )}
                 <button onClick={handleLogout}>LOGOUT</button>
                 </>
                 ) : (
