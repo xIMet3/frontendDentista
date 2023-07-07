@@ -6,19 +6,42 @@ GeeksHubs Academy, Proyecto 5 :
 
 ## Índice
 
-- [🎯Objetivo🎯](#objetivo)
-- [🪛Desarrollo🪛](#desarrollo)
-- [📍Vistas📍](#vistas)
-- [👏Agradecimientos👏](#agradecimientos)
+- [Objetivo 🎯](#objetivo)
+- [Vistas 🖥️](#vistas)
+- [Desarrollo 🔧](#desarrollo)
+- [Repositorio 💾](#repositorio)
+- [Agradecimientos 👏](#agradecimientos)
 
 
-### 🎯 Objetivo 🎯
+###  Objetivo 🎯
  
 El objetivo de este proyecto es crear el frontend de una clinica dental funciona y conectar con un backend y una base de datos creados en el proyecto anterior (Proyecto 4).
 
 Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcionalidades básicas de una página web con las siguientes carácteristicas: login, registro,visualización de datos del usuario, modificación de datos del usuario, creación de citas, visualización de todas las citas y búsqueda de citas por fecha y modificación de citas
 
-### 🪛 Desarrollo 🪛
+### Vistas 🖥️
+
+####Home:
+![home](./img/home.png)
+
+####Perfil usuario:
+![perfil](./img/Perfil.png)
+
+####Pedir cita:
+![pedirCita](./img/pedirCita.png)
+
+####Citas del usuario:
+![citasUsuario](./img/citasComoUsuario.png)
+
+####Todas las citas (como doctor):
+![citasDoctor](./img/citasDoctor.png)
+
+####Todos los usuario (como admin):
+![todosUsuarios](./img/todosUsuarios.png)
+
+
+
+### Desarrollo 🔧
 
 La API ha sido desarrollada por Joaquin Ruiz Padrós como parte de la formación Full Stack Developer de GeeksHubs. 
 
@@ -32,4 +55,13 @@ REDUX-PERSIST y REDUX-THUNK se han añadido como librerias adicionales para la c
 
 En cuanto al diseño, se han utilizado componentes de Bootstrap y MDB-Bootstrap para conseguir un diseño atractivo y responsive.
 
-Por último, como herramientas utilitarias hemos usado JWC_DECODED para desencriptar los datos del token recibido por el backend em importar las credenciales correspondientes.
+Por último, como herramientas utilitarias hemos usado JWC_DECODED para desencriptar los datos del token recibido por el backend e importar las credenciales correspondientes.
+
+### Agradecimientos 👏
+
+Gracias a todos los compañeros que me han ayudado en especia a Jesus y Edu que me han apoyado desde el minuto uno.
+
+###  Repositorio en GitHub 💾
+
+https://github.com/xIMet3/frontendDentista
+
