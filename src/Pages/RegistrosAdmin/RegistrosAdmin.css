@@ -1,9 +1,15 @@
+* {
+    overflow-x: hidden;
+}
+
 .vistaCompleta {
     width: 100vw;
-    height: 92vh;
+    min-height: 87vh;
     background-image: url(../../../img/muelaTatoo.png);
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 35%;
 }
 
 .cardsUsers {
@@ -25,7 +31,7 @@
     justify-content: center;
     max-width: 40em;
     min-height: 2em;
-    /* min-width: 30em; */
     padding: 1em;
+    background-color:powderblue;
 
 }

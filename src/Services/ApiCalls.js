@@ -88,11 +88,15 @@ export const fetchAllAppointments = async (token, appointmentData) => {
 };
 
 export const getAllProfiles = async (token) => {
-  let access = {
-    headers: {
-      Authorization: `Bearer: ${token}`,
-    },
-  };
-  let res = await axios.get(`http://localhost:3000/allProfiles`, access);
-  return res.data;
-};
+    const res = await axios.get("http://localhost:3000/allProfiles", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    
+    const profiles = res.data;
+    return profiles;
+  }
+
+
+
