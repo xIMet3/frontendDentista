@@ -5,20 +5,30 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { userData } from "../userSlice";
 
 const AllUsers = () => {
-  const [users, setUsers] = useState([]);
-  const credentialsRedux = useSelector(userData);
-  const token = credentialsRedux?.credentials?.token;
-  console.log(users);
+  // Declaracion de variables de estado
 
+  // Estado que almacena la lista de usuarios
+  const [users, setUsers] = useState([]); 
+   // Estado que almacena los datos del usuario actual
+  const credentialsRedux = useSelector(userData);
+  // Variable que guarda el token de autenticacion
+  const token = credentialsRedux?.credentials?.token; 
+
+  // Efecto de lado que se ejecuta despues del primer renderizado
   useEffect(() => {
+    // Llamada a la funcion getAllProfiles para obtener todos los perfiles de usuario
     getAllProfiles(token).then((res) => {
+      // Actualiza el estado "users" con los datos obtenidos
       setUsers(res.data);
     });
   }, []);
 
+  // Funcion para eliminar un usuario
   const handleDeleteUser = (userId) => {
+    // Llamada a la funcion deleteProfile para eliminar el usuario con el ID especificado
     deleteProfile(userId, token)
       .then(() => {
+        // Actualiza el estado "users" filtrando el usuario eliminado
         setUsers(users.filter((user) => user.id !== userId));
       })
       .catch((error) => {
@@ -26,21 +36,25 @@ const AllUsers = () => {
       });
   };
 
+  // Renderizado del componente
   return (
     <div className="vistaCompleta">
       <div className="cardsUsers">
         <h1>Todos los usuarios registrados</h1>
-        {users.length === 0 ? (
-          <p>No hay usuarios registrados</p>
+        {/* Comprueba si no hay usuarios registrados */}
+        {users.length === 0 ? ( 
+          // Muestra un mensaje si no hay usuarios
+          <p>No hay usuarios registrados</p> 
         ) : (
+          // Si hay usuarios registrados, muestra la lista de usuarios
           <ul>
             {users.map((user) => (
               <li key={user.id}>
                 <div className="cardIndividual">
-                  Nombre: {user.name}, Email: {user.email}, Teléfono:{" "}
-                  {user.telephoneNumber}
+                  Nombre: {user.name}, Email: {user.email}, Teléfono: {user.telephoneNumber}
+                  {/* Boton de eliminar usuario */}
                   <button onClick={() => handleDeleteUser(user.id)}>
-                    Eliminar usuario
+                    Eliminar
                   </button>
                 </div>
               </li>
@@ -53,4 +67,5 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
+
 
