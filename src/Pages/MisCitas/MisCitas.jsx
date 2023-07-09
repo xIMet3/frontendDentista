@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {updateAppointment,fetchUserAppointments,deleteAppointment,} from "../../Services/ApiCalls";
+import {
+  updateAppointment,
+  fetchUserAppointments,
+  deleteAppointment,
+} from "../../Services/ApiCalls";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { Button, Modal, Form } from "react-bootstrap";
@@ -51,18 +55,20 @@ function UpdateAppointments() {
   };
 
   // Maneja el evento de eliminar una cita
-  const handleDeleteAppointment = async (appointmentId) => {
-    try {
-      await deleteAppointment(appointmentId, credentials.token);
-      const updatedAppointments = appointments.filter(
-        (appointment) => appointment.id !== appointmentId
-      );
-      setAppointments(updatedAppointments);
-    } catch (error) {
-      console.error("Error al eliminar la cita:", error);
-    }
-  };
-
+const handleDeleteAppointment = async (appointmentId) => {
+  try {
+    // Llama a la funcion deleteAppointment para eliminar la cita utilizando el appointmentId y el token de autenticación
+    await deleteAppointment(appointmentId, credentials.token);
+    // Filtra las citas para obtener todas excepto la cita eliminada
+    const updatedAppointments = appointments.filter(
+      (appointment) => appointment.id !== appointmentId
+    );
+    // Actualiza el estado de las citas con las citas actualizadas
+    setAppointments(updatedAppointments);
+  } catch (error) {
+    console.error("Error al eliminar la cita:", error);
+  }
+};
   // Maneja el evento de guardar los cambios realizados en una cita
   const handleSaveChanges = async () => {
     try {
@@ -98,7 +104,7 @@ function UpdateAppointments() {
               Modificar Cita
             </Button>
             <Button
-              variant="danger" // Establece el estilo visual para el botón de eliminar
+              variant="danger"
               className="botonEliminar"
               onClick={() => handleDeleteAppointment(appointment.id)}
             >
@@ -128,7 +134,7 @@ function UpdateAppointments() {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="text"
-                value={modifiedAppointment.date}
+                value={new Date(modifiedAppointment.date).toLocaleString()}
                 onChange={(e) =>
                   setModifiedAppointment({
                     ...modifiedAppointment,
@@ -137,6 +143,7 @@ function UpdateAppointments() {
                 }
               />
             </Form.Group>
+
             <Form.Group controlId="formAppointmentdescription">
               <Form.Label>Descripción</Form.Label>
               <Form.Control
@@ -167,4 +174,3 @@ function UpdateAppointments() {
 }
 
 export default UpdateAppointments;
-
