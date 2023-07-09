@@ -55,20 +55,23 @@ function UpdateAppointments() {
   };
 
   // Maneja el evento de eliminar una cita
-const handleDeleteAppointment = async (appointmentId) => {
-  try {
-    // Llama a la funcion deleteAppointment para eliminar la cita utilizando el appointmentId y el token de autenticación
-    await deleteAppointment(appointmentId, credentials.token);
-    // Filtra las citas para obtener todas excepto la cita eliminada
-    const updatedAppointments = appointments.filter(
-      (appointment) => appointment.id !== appointmentId
-    );
-    // Actualiza el estado de las citas con las citas actualizadas
-    setAppointments(updatedAppointments);
-  } catch (error) {
-    console.error("Error al eliminar la cita:", error);
-  }
-};
+  const handleDeleteAppointment = async (appointmentId) => {
+    try {
+      // Llama a la función deleteAppointment para eliminar la cita utilizando el appointmentId y el token de autenticación
+      await deleteAppointment(appointmentId, credentials.token);
+
+      // Filtra las citas para obtener todas excepto la cita eliminada
+      const updatedAppointments = appointments.filter(
+        (appointment) => appointment.id !== appointmentId
+      );
+
+      // Actualiza el estado de las citas con las citas actualizadas
+      setAppointments(updatedAppointments);
+    } catch (error) {
+      console.error("Error al eliminar la cita:", error);
+    }
+  };
+
   // Maneja el evento de guardar los cambios realizados en una cita
   const handleSaveChanges = async () => {
     try {
@@ -93,7 +96,7 @@ const handleDeleteAppointment = async (appointmentId) => {
         appointments.map((appointment) => (
           <div className="cardCita" key={appointment.id}>
             <p>ID cita: {appointment.id}</p>
-            <p>Doctor: {appointment.doctor_id}</p>
+            <p>Doctor: {appointment.doctor_id === 2 ? "Dr. Jesús Vázquez" : "Dr. Carlos Redondo"}</p>
             <p>Fecha: {new Date(appointment.date).toLocaleString()}</p>
             <p>Descripción: {appointment.description}</p>
             <Button
@@ -174,3 +177,4 @@ const handleDeleteAppointment = async (appointmentId) => {
 }
 
 export default UpdateAppointments;
+
