@@ -96,3 +96,18 @@ export const deleteProfile = async (userId, token) => {
   });
   return res.data;
 };
+
+// export const fetchDoctorById = async (doctorId) => {
+//   const res = await axios.get(`http://localhost:3000/doctor/${doctorId}`);
+//   return res.data;
+// };
+
+export const deleteAppointment = async (id, token) => {
+    const res = await axios.delete(`http://localhost:3000/deleteAppointment/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return res.data;
+};

@@ -110,8 +110,8 @@ export const PedirCita = () => {
           value={body.doctor_id || ""}
         >
           <option value="">Seleccionar doctor</option>
-          <option value="1">Dr. Jesús Vázquez</option>
-          <option value="2">Dr. Carlos Redondo</option>
+          <option value="2">Dr. Jesús Vázquez</option>
+          <option value="3">Dr. Carlos Redondo</option>
         </select>
 
         {/* Input para agregar comentarios o descripciones */}

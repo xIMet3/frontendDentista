@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  updateAppointment,
-  fetchUserAppointments,
-} from "../../Services/ApiCalls";
+import {updateAppointment,fetchUserAppointments,deleteAppointment,} from "../../Services/ApiCalls";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { Button, Modal, Form } from "react-bootstrap";
@@ -53,6 +50,19 @@ function UpdateAppointments() {
     });
   };
 
+  // Maneja el evento de eliminar una cita
+  const handleDeleteAppointment = async (appointmentId) => {
+    try {
+      await deleteAppointment(appointmentId, credentials.token);
+      const updatedAppointments = appointments.filter(
+        (appointment) => appointment.id !== appointmentId
+      );
+      setAppointments(updatedAppointments);
+    } catch (error) {
+      console.error("Error al eliminar la cita:", error);
+    }
+  };
+
   // Maneja el evento de guardar los cambios realizados en una cita
   const handleSaveChanges = async () => {
     try {
@@ -82,10 +92,17 @@ function UpdateAppointments() {
             <p>Descripción: {appointment.description}</p>
             <Button
               variant="primary"
-              className="boton"
+              className="botonModificar"
               onClick={() => handleModifyAppointment(appointment)}
             >
               Modificar Cita
+            </Button>
+            <Button
+              variant="danger" // Establece el estilo visual para el botón de eliminar
+              className="botonEliminar"
+              onClick={() => handleDeleteAppointment(appointment.id)}
+            >
+              Eliminar Cita
             </Button>
           </div>
         ))
@@ -150,3 +167,4 @@ function UpdateAppointments() {
 }
 
 export default UpdateAppointments;
+

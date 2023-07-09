@@ -10,6 +10,7 @@
     height: auto;
     max-width: 50em;
     margin-left: 1em;
+    padding: 2em;
 }
 
 h1 {
@@ -17,4 +18,8 @@ h1 {
 }
 .bodyVista button {
     margin-bottom: 2em;
+}
+
+.botonEliminar {
+    margin-left: 1em;
 }
