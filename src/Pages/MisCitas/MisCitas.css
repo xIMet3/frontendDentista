@@ -23,3 +23,15 @@ h1 {
 .botonEliminar {
     margin-left: 1em;
 }
+
+.filterContainer {
+    width: 50%;
+    border: 0;
+    margin-left: 3em;
+}
+
+#filterDate {
+    width: 100%;
+    color: darkred;
+    border: 0.15em solid #0075bb;
+}

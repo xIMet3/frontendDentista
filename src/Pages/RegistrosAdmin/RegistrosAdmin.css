@@ -1,51 +1,55 @@
-* {
-    overflow-x: hidden;
-}
-
 .vistaCompleta {
-    width: 100vw;
-    min-height: 87vh;
-    background-image: url(../../../img/muelaTatoo.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: 35%;
+  width: 100vw;
+  min-height: 87vh;
+  background-image: url(../../../img/muelaTatoo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: 35%;
 }
 
 .cardsUsers {
-    height: auto;
-    max-width: 42em;
-    margin: 1em;
-    border-radius: 1em;
-    display: flex;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    color: darkred;
+  height: auto;
+  max-width: 30em;
+  margin: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  color: darkred;
+  justify-content: space-between; /* Muestra las tarjetas al principio y al final de la vista */
 }
-.cardIndividual {
-    border: 0.15em solid darkblue;
-    border-radius: 1em;
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    max-width: 40em;
-    min-height: 2em;
-    padding: 1em;
-    background-color:powderblue;
 
+.cardIndividual {
+  border: 0.15em solid darkblue;
+  border-radius: 1em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenido de las tarjetas a la izquierda */
+  max-width: 40em;
+  min-height: 2em;
+  padding: 1em;
+  background-image: url(../../../img/fondoUser.jpg);
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5em;
 }
 
 .cardIndividual button {
-    margin-left: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    color: red;
-    border-radius: 2em;
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+  border-radius: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5em 1em;
 }
 
 button:hover {
-    transition: 0.3s;
-    background-color: grey;
+  transition: 0.3s;
+  background-color: grey;
 }
