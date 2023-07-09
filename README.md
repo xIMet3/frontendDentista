@@ -11,7 +11,7 @@ GeeksHubs Academy, Proyecto 5 :
 - [Desarrollo 🔧](#desarrollo)
 - [Credenciales 🔐](#credenciales)
 - [Repositorio 💾](#repositorio)
-- [Instalación 💽] (#instalacion)
+- [Instalación en Local 💽](#instalacion)
 - [Agradecimientos 👏](#agradecimientos)
 
 
@@ -19,7 +19,7 @@ GeeksHubs Academy, Proyecto 5 :
  
 El objetivo de este proyecto es crear el frontend de una clinica dental funciona y conectar con un backend y una base de datos creados en el proyecto anterior (Proyecto 4).
 
-Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcionalidades básicas de una página web con las siguientes carácteristicas: login, registro,visualización de datos del usuario, modificación de datos del usuario, creación de citas, visualización de todas las citas y búsqueda de citas por fecha y modificación de citas
+Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcionalidades básicas de una página web con las siguientes carácteristicas: login, registro,visualización de datos del usuario, modificación de datos del usuario y eliminación del usuario, creación de citas, visualización de todas las citas y búsqueda de citas por fecha, modificación y eliminación de citas.
 
 ### Vistas 🖥️
 
@@ -33,7 +33,7 @@ Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcion
 ![pedirCita](./img/pedirCita.png)
 
 ####Citas del usuario:
-![citasUsuario](./img/citasComoUsuario.png)
+![citasUsuario](./img/misCitas.png)
 
 ####Todas las citas (como doctor):
 ![citasDoctor](./img/citasDoctor.png)
