@@ -20,15 +20,11 @@ export const fetchUserData = async (token) => {
 };
 
 export const updateUserData = async (token, userData) => {
-  const res = await axios.put(
-    "http://localhost:3000/updateProfile",
-    userData,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const res = await axios.put("http://localhost:3000/updateProfile", userData, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return res.data;
 };
 
@@ -51,7 +47,6 @@ export const fetchUserAppointments = async (token) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  console.log(res.data);
   return res.data.data;
 };
 
@@ -89,25 +84,26 @@ export const getAllProfiles = async (token) => {
 };
 
 export const deleteProfile = async (userId, token) => {
-  const res = await axios.delete(`http://localhost:3000/deleteProfile/${userId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  return res.data;
-};
-
-// export const fetchDoctorById = async (doctorId) => {
-//   const res = await axios.get(`http://localhost:3000/doctor/${doctorId}`);
-//   return res.data;
-// };
-
-export const deleteAppointment = async (id, token) => {
-    const res = await axios.delete(`http://localhost:3000/deleteAppointment/${id}`, {
+  const res = await axios.delete(
+    `http://localhost:3000/deleteProfile/${userId}`,
+    {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    });
+    }
+  );
+  return res.data;
+};
 
-    return res.data;
+export const deleteAppointment = async (id, token) => {
+  const res = await axios.delete(
+    `http://localhost:3000/deleteAppointment/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return res.data;
 };

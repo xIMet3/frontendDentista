@@ -1,37 +1,37 @@
 .bodyVista {
-    min-height: 90vh;
-    background-image: url(../../../img/muelaTatoo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
+  min-height: 90vh;
+  background-image: url(../../../img/muelaTatoo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
 }
 
 .cardCita {
-    height: auto;
-    max-width: 50em;
-    margin-left: 1em;
-    padding: 2em;
+  height: auto;
+  max-width: 50em;
+  margin-left: 1em;
+  padding: 2em;
 }
 
 h1 {
-    margin-left: 3em;
+  margin-left: 3em;
 }
 .bodyVista button {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .botonEliminar {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 .filterContainer {
-    width: 50%;
-    border: 0;
-    margin-left: 3em;
+  width: 50%;
+  border: 0;
+  margin-left: 3em;
 }
 
 #filterDate {
-    width: 100%;
-    color: darkred;
-    border: 0.15em solid #0075bb;
+  width: 100%;
+  color: darkred;
+  border: 0.15em solid #0075bb;
 }

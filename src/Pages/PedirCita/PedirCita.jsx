@@ -15,7 +15,7 @@ export const PedirCita = () => {
   // Estado para manejar errores en el formulario
   const [error, setError] = useState("");
 
-  // Estado para mostrar el mensaje de éxito
+  // Estado para mostrar el mensaje de exito
   const [successMessage, setSuccessMessage] = useState("");
 
   // Estado para mostrar el mensaje de no citas disponibles
@@ -24,10 +24,10 @@ export const PedirCita = () => {
   // Estado local para almacenar las citas existentes
   const [appointments, setAppointments] = useState([]);
 
-  // Hook de enrutamiento para redireccionar después de enviar el formulario
+  // Hook de enrutamiento para redireccionar despues de enviar el formulario
   const navigate = useNavigate();
 
-  // Función para manejar el cambio de valor en los campos del formulario
+  // Funcion para manejar el cambio de valor en los campos del formulario
   const inputHandler = ({ target }) => {
     let { name, value } = target;
     setBody((prevState) => ({
@@ -36,7 +36,7 @@ export const PedirCita = () => {
     }));
   };
 
-  // Función para manejar el envío del formulario
+  // Funcion para manejar el envio del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,7 +56,7 @@ export const PedirCita = () => {
       return;
     }
 
-    // Verifica si ya existe una cita para el médico y la fecha seleccionada
+    // Verifica si ya existe una cita para el Doctor y la fecha seleccionada
     const isAppointmentExist = appointments.find(
       (appointment) =>
         appointment.doctor_id === body.doctor_id &&
@@ -74,7 +74,7 @@ export const PedirCita = () => {
     setNoCitasDisponibles(true);
 
     try {
-      // Llama a la función de creación de cita y maneja la respuesta
+      // Llama a la funcion de creacion de cita y maneja la respuesta
       createAppointment(credentials.token, body)
         .then((res) => {
           if (res.success) {
@@ -92,15 +92,18 @@ export const PedirCita = () => {
 
   return (
     <div>
-      {/* Muestra el mensaje de error, si hubiera */}
+      {/* Muestra el mensaje de error si hubiera */}
       {error && <p>{error}</p>}
 
-      {/* Muestra el mensaje de éxito, si hubiera */}
+      {/* Muestra el mensaje de exito si hubiera */}
       {successMessage && <p>{successMessage}</p>}
 
       {/* Muestra el mensaje de no citas disponibles, si corresponde */}
       {noCitasDisponibles && (
-        <p>No hay citas disponibles en esa fecha y hora, por favor introduzca otra fecha para la cita.</p>
+        <p>
+          No hay citas disponibles en esa fecha y hora, por favor introduzca
+          otra fecha para la cita.
+        </p>
       )}
 
       {/* Formulario para crear la cita */}
@@ -116,7 +119,7 @@ export const PedirCita = () => {
           onChange={(e) => inputHandler(e)}
         />
 
-        {/* Input de selección de tratamiento */}
+        {/* Input de seleccion de tratamiento */}
         <select
           name="treatment_id"
           onChange={(e) => inputHandler(e)}
@@ -131,7 +134,7 @@ export const PedirCita = () => {
           <option value="6">Blanqueamiento dental</option>
         </select>
 
-        {/* Input de selección de doctor */}
+        {/* Input de seleccion de doctor */}
         <select
           name="doctor_id"
           onChange={(e) => inputHandler(e)}
@@ -151,7 +154,7 @@ export const PedirCita = () => {
           onChange={(e) => inputHandler(e)}
         ></textarea>
 
-        {/* Botón de envío */}
+        {/* Botón de envio */}
         <button type="submit">Crear cita</button>
       </form>
     </div>

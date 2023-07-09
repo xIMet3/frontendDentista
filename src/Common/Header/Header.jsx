@@ -14,12 +14,12 @@ export const Header = () => {
   const userData = useSelector((state) => state.user);
   const roleId = userData.data.role_id;
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   return (
     <div className="navbarComun">
@@ -33,23 +33,26 @@ export const Header = () => {
             <Nav className="navbar-links">
               {userData.credentials.token ? (
                 <>
-                <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
-                <BotonCambiaVista path={"/PedirCita"} name={"PEDIR CITA"} />
-                <BotonCambiaVista path={"/MisCitas"} name={"MIS CITAS"} />
-                {roleId === 2 && (
-                  <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
-                )}
+                  <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
+                  <BotonCambiaVista path={"/PedirCita"} name={"PEDIR CITA"} />
+                  <BotonCambiaVista path={"/MisCitas"} name={"MIS CITAS"} />
+                  {roleId === 2 && (
+                    <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
+                  )}
 
-                {roleId === 1 && (
-                  <BotonCambiaVista path={"/RegistrosAdmin"} name={"USUARIOS"} />
-                )}
-                <button onClick={handleLogout}>LOGOUT</button>
+                  {roleId === 1 && (
+                    <BotonCambiaVista
+                      path={"/RegistrosAdmin"}
+                      name={"USUARIOS"}
+                    />
+                  )}
+                  <button onClick={handleLogout}>LOGOUT</button>
                 </>
-                ) : (
-                  <>
+              ) : (
+                <>
                   <BotonCambiaVista path={"/Login"} name={"LOGIN"} />
                   <BotonCambiaVista path={"/Register"} name={"REGÍSTRATE"} />
-                  </>
+                </>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -57,4 +60,4 @@ export const Header = () => {
       </Navbar>
     </div>
   );
-}
+};
