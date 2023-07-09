@@ -23,22 +23,22 @@ Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcion
 
 ### Vistas 🖥️
 
-####Home:
+#### Home:
 ![home](./img/home.png)
 
-####Perfil usuario:
+#### Perfil usuario:
 ![perfil](./img/Perfil.png)
 
-####Pedir cita:
+#### Pedir cita:
 ![pedirCita](./img/pedirCita.png)
 
-####Citas del usuario:
+#### Citas del usuario:
 ![citasUsuario](./img/misCitas.png)
 
-####Todas las citas (como doctor):
+#### Todas las citas (como doctor):
 ![citasDoctor](./img/citasDoctor.png)
 
-####Todos los usuario (como admin):
+#### Todos los usuario (como admin):
 ![todosUsuarios](./img/todosUsuarios.png)
 
 
