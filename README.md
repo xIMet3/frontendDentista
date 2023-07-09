@@ -65,23 +65,23 @@ Por último, como herramientas utilitarias hemos usado JWC_DECODED para desencri
 
 Para poder comprobar el funcionamiento puedes logearte como Admin, Doctor y usuario:
 
-#Admin:
-####Email => ximo@mail.com
-####Contraseña => admin123
+# Admin:
+#### Email => ximo@mail.com
+#### Contraseña => admin123
 
 ###### Logeandote como Admin muestra el botón en el header de usuarios donde puedes ver todos los usuarios registrados.
 -----------------------------------------------------
 
-#Doctor:
-####Email => jesus@mail.com ó carlos@mail.com
-####Contraseña =>admin123
+# Doctor:
+#### Email => jesus@mail.com ó carlos@mail.com
+#### Contraseña =>admin123
 
 ###### Logeandote como doctor muestra el botón Agenda donde puedes ver todas las citas pendientes y un buscador que filtra las citas por fecha.
 -----------------------------------------------------
 
-#Usuario:
-####Email => alex@mail.com ó javi@mail.com ó marta@mail.com ó noelia@mail.com
-####Contraseña => admin123
+# Usuario:
+#### Email => alex@mail.com ó javi@mail.com ó marta@mail.com ó noelia@mail.com
+#### Contraseña => admin123
 
 Como usuario tienes limitadas las vistas al home, pedir citas, ver tus citas y ver tu perfil.
 -----------------------------------------------------
@@ -90,20 +90,20 @@ Puedes Registar tantos usuarios como quieras siendo el email unico, es decir, so
 
 ### Instalación en local
 
-####Seguiremos los siguientes pasos:
+#### Seguiremos los siguientes pasos:
 
-######Clonamos el repositorio $git clone 'url-repository'
-######Instalamos las dependencias $ npm install
-######Conectamos nuestro repositorio con la base de datos $ npx sequelize db:create
-######Ejecutamos las migraciones $ npx sequelize db:migrate
-######Ejecutamos los seeders $ npx sequelize db:seed:all
-######Conectamos el servidor$ npm run dev
+###### Clonamos el repositorio $git clone 'url-repository'
+###### Instalamos las dependencias $ npm install
+###### Conectamos nuestro repositorio con la base de datos $ npx sequelize db:create
+###### Ejecutamos las migraciones $ npx sequelize db:migrate
+###### Ejecutamos los seeders $ npx sequelize db:seed:all
+###### Conectamos el servidor$ npm run dev
 
-####En cuanto al frontend los pasos serán los siguientes:
+#### En cuanto al frontend los pasos serán los siguientes:
 
-######Clonar el repositorio
-######$ npm install
-######$ npm run dev
+###### Clonar el repositorio
+###### $ npm install
+###### $ npm run dev
 
 ###  Repositorio en GitHub 💾
 
