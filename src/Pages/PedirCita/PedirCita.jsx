@@ -40,7 +40,7 @@ export const PedirCita = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Valida si todos los campos del formulario están seleccionados
+    // Valida si todos los campos del formulario estan seleccionados
     if (!body.date || !body.treatment_id || !body.doctor_id) {
       setError("Por favor, selecciona todos los campos.");
       return;
@@ -53,6 +53,21 @@ export const PedirCita = () => {
     // Valida que la fecha y hora seleccionada sea posterior a la actual
     if (selectedDateTime <= currentDateTime) {
       setError("Selecciona una fecha y hora posterior a la actual.");
+      return;
+    }
+
+    // Valida que la fecha seleccionada sea un dia de la semana (lunes a viernes)
+    if (!isWeekday(selectedDateTime)) {
+      setError("Solo se pueden programar citas de lunes a viernes.");
+      return;
+    }
+
+    // Valida el rango de horas disponibles
+    const selectedHour = selectedDateTime.getHours();
+    const isValidHour =
+      (selectedHour >= 9 && selectedHour < 14) || (selectedHour >= 16 && selectedHour < 20);
+    if (!isValidHour) {
+      setError("Las horas de cita disponibles son de 9:00 a 14:00 y de 16:00 a 20:00.");
       return;
     }
 
@@ -90,6 +105,12 @@ export const PedirCita = () => {
     }
   };
 
+  // Funcion para verificar si una fecha es un dia de la semana (lunes a viernes)
+  const isWeekday = (date) => {
+    const day = date.getDay(); // Obtiene el número del día de la semana (0 para domingo, 1 para lunes, etc.)
+    return day >= 1 && day <= 5; // Retorna true si es un día de la semana (lunes a viernes)
+  };
+
   return (
     <div>
       {/* Muestra el mensaje de error si hubiera */}
@@ -114,7 +135,7 @@ export const PedirCita = () => {
           type="datetime-local"
           name="date"
           min="2023-01-01T09:00"
-          max="2100-12-31T19:00"
+          max="2100-12-31T20:00"
           step="3600"
           onChange={(e) => inputHandler(e)}
         />
@@ -154,7 +175,7 @@ export const PedirCita = () => {
           onChange={(e) => inputHandler(e)}
         ></textarea>
 
-        {/* Botón de envio */}
+        {/* Boton de envio */}
         <button type="submit">Crear cita</button>
       </form>
     </div>
