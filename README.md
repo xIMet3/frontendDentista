@@ -86,7 +86,7 @@ Para poder comprobar el funcionamiento puedes logearte como Admin, Doctor y usua
 Como usuario tienes limitadas las vistas al home, pedir citas, ver tus citas y ver tu perfil.
 -----------------------------------------------------
 
-Puedes Registar tantos usuarios como quieras siendo el email unico, es decir, solo puedes registrar un email una vez.
+Puedes Registar tantos usuarios como quieras siendo el email unico, es decir, solo puedes registrar un email una vez al igual que el Teléfono.
 
 ### Instalación en local
 
