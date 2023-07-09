@@ -19,38 +19,29 @@ export const fetchUserData = async (token) => {
   return res.data;
 };
 
-// Funcion para actualizar los datos del usuario
 export const updateUserData = async (token, userData) => {
-  // Realiza una solicitud usando axios
   const res = await axios.put(
     "http://localhost:3000/updateProfile",
-    // Datos del usuario a actualizar
     userData,
     {
       headers: {
-        // Agrega el token en el header de la solicitud
         Authorization: `Bearer ${token}`,
       },
     }
   );
-  // Devuelve los datos de la respuesta
   return res.data;
 };
 
 export const createAppointment = async (token, appointmentData) => {
-  // Realiza una solicitud usando axios
   const res = await axios.post(
     "http://localhost:3000/newAppointment",
-    // Datos del usuario a actualizar
     appointmentData,
     {
       headers: {
-        // Agrega el token en el header de la solicitud
         Authorization: `Bearer ${token}`,
       },
     }
   );
-  // Devuelve los datos de la respuesta
   return res.data;
 };
 
@@ -88,15 +79,20 @@ export const fetchAllAppointments = async (token, appointmentData) => {
 };
 
 export const getAllProfiles = async (token) => {
-    const res = await axios.get("http://localhost:3000/allProfiles", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    
-    const profiles = res.data;
-    return profiles;
-  }
+  const res = await axios.get("http://localhost:3000/allProfiles", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const profiles = res.data;
+  return profiles;
+};
 
-
-
+export const deleteProfile = async (userId, token) => {
+  const res = await axios.delete(`http://localhost:3000/deleteProfile/${userId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return res.data;
+};

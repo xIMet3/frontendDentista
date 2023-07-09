@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./RegistrosAdmin.css";
-import { getAllProfiles } from "../../Services/ApiCalls";
+import { getAllProfiles, deleteProfile } from "../../Services/ApiCalls";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { userData } from "../userSlice";
 
@@ -16,6 +16,16 @@ const AllUsers = () => {
     });
   }, []);
 
+  const handleDeleteUser = (userId) => {
+    deleteProfile(userId, token)
+      .then(() => {
+        setUsers(users.filter((user) => user.id !== userId));
+      })
+      .catch((error) => {
+        console.error("Error al eliminar el usuario", error);
+      });
+  };
+
   return (
     <div className="vistaCompleta">
       <div className="cardsUsers">
@@ -29,6 +39,9 @@ const AllUsers = () => {
                 <div className="cardIndividual">
                   Nombre: {user.name}, Email: {user.email}, Teléfono:{" "}
                   {user.telephoneNumber}
+                  <button onClick={() => handleDeleteUser(user.id)}>
+                    Eliminar usuario
+                  </button>
                 </div>
               </li>
             ))}
@@ -40,3 +53,4 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
+
