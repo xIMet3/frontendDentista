@@ -8,6 +8,7 @@ import { PedirCita } from "../PedirCita/PedirCita";
 import { DoctorAppointments } from "../CitasDentista/CitasDentista";
 import AllUsers from "../RegistrosAdmin/RegistrosAdmin";
 import UpdateAppointments from "../MisCitas/MisCitas";
+import InfoContacto from "../Contacto/Contaco";
 export const Body = () => {
   return (
     <>
@@ -20,6 +21,7 @@ export const Body = () => {
         <Route path="/misCitas" element={<UpdateAppointments />} />
         <Route path="/citasDentista" element={<DoctorAppointments />} />
         <Route path="/registrosAdmin" element={<AllUsers />} />
+        <Route path="/contacto" element={<InfoContacto />} />
       </Routes>
     </>
   );

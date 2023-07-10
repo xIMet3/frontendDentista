@@ -36,6 +36,7 @@ export const Header = () => {
                   <BotonCambiaVista path={"/PerfilUsuario"} name={"PERFIL"} />
                   <BotonCambiaVista path={"/PedirCita"} name={"PEDIR CITA"} />
                   <BotonCambiaVista path={"/MisCitas"} name={"MIS CITAS"} />
+                  <BotonCambiaVista path={"/Contacto"} name={"CONTACTO"} />
                   {roleId === 2 && (
                     <BotonCambiaVista path={"/CitasDentista"} name={"AGENDA"} />
                   )}
@@ -52,6 +53,8 @@ export const Header = () => {
                 <>
                   <BotonCambiaVista path={"/Login"} name={"LOGIN"} />
                   <BotonCambiaVista path={"/Register"} name={"REGÍSTRATE"} />
+                  <BotonCambiaVista path={"/Contacto"} name={"CONTACTO"} />
+
                 </>
               )}
             </Nav>

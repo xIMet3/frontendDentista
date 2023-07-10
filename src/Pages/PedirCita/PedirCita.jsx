@@ -171,7 +171,7 @@ export const PedirCita = () => {
           className="camposCrearCita"
           name="description"
           placeholder="Descripción.."
-          maxLength="150"
+          maxLength="80"
           onChange={(e) => inputHandler(e)}
         ></textarea>
 
