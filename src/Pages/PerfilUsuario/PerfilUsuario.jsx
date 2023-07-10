@@ -4,14 +4,10 @@ import { fetchUserData, updateUserData } from "../../Services/ApiCalls";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import { Modal } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { Button, Card, Modal, Form } from "react-bootstrap";
 
 export const PerfilUsuario = () => {
-  // Estado para almacenar los datos del usuario
   const [user, setUser] = useState(null);
-  // Obtiene los datos del usuario del estado global
   const { credentials } = useSelector(userData);
   const [showModal, setShowModal] = useState(false);
   const [editedUser, setEditedUser] = useState({});
@@ -19,15 +15,12 @@ export const PerfilUsuario = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        // Obtiene los datos del usuario usando el token
         const userData = await fetchUserData(credentials.token);
-        // Actualiza el estado con los datos del usuario obtenidos
         setUser(userData);
       } catch (error) {
         console.error("Error al obtener los datos del usuario:", error);
       }
     };
-    // Ejecuta la funcion para obtener los datos del usuario
     getUserData();
   }, []);
 
@@ -59,15 +52,16 @@ export const PerfilUsuario = () => {
   };
 
   return (
-    <div>
+    <div className="vistaPerfil">
       {user ? (
-        // Si se obtienen los datos del usuario:
-        <div className="cardPerfilUsuario">
-          <div className="perfilUsuarioContainer">
-            <h1>PERFIL DE USUARIO</h1>
-            <p>Nombre: {user.data.name}</p>
-            <p>Teléfono: {user.data.telephoneNumber}</p>
-            <p>Correo electrónico: {user.data.email}</p>
+        <Card className="cardPerfilUsuario" id="cardPerfil" >
+          <Card.Body>
+            <Card.Title className="tituloPerfil">PERFIL DE USUARIO</Card.Title>
+            <Card.Text>
+              <p>Nombre: {user.data.name}</p>
+              <p>Teléfono: {user.data.telephoneNumber}</p>
+              <p>Correo electrónico: {user.data.email}</p>
+            </Card.Text>
             <Button
               variant="primary"
               onClick={handleShowModal}
@@ -75,10 +69,9 @@ export const PerfilUsuario = () => {
             >
               Modificar
             </Button>
-          </div>
-        </div>
+          </Card.Body>
+        </Card>
       ) : (
-        // Si no se han obtenido los datos del usuario
         <p>Debes loguearte para acceder a tu perfil</p>
       )}
       <Modal show={showModal} onHide={handleCloseModal}>
@@ -128,4 +121,5 @@ export const PerfilUsuario = () => {
     </div>
   );
 };
+
 export default PerfilUsuario;

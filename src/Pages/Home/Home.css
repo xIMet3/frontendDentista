@@ -1,7 +1,3 @@
-.padre {
-  margin-top: 3em;
-  overflow-x: hidden;
-}
 .paginaEntera {
   max-width: 100vw;
   background-image: url(../../../img/muelaTatoo.png);
@@ -27,6 +23,7 @@
 
 .bodyCard1 {
   background-image: url(../../../img/fondoCardTratamiento.jpeg);
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;

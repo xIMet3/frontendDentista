@@ -41,6 +41,9 @@ Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcion
 #### Todos los usuario (como admin):
 ![todosUsuarios](./img/todosUsuarios.png)
 
+#### Contacto:
+![contacto](./img/Contacto.png)
+
 
 
 ### Desarrollo 🔧

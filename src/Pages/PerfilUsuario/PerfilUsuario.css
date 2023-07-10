@@ -1,27 +1,38 @@
-.cardPerfilUsuario {
-  width: 99vw;
-  height: 100vh;
+
+.vistaPerfil {
+  max-width: 100vw;
+  min-height: 90vh;
+  background-image: url(../../../img/fachadaClinica.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  background-image: url(../../../img/muelaTatoo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 37%;
+
 }
 
-.perfilUsuarioContainer {
-  width: 60%;
+.cardPerfilUsuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40em;
+  padding: 1em;
+  background-color: #a1a7b2;
+  /* background-image: url(../../../img/fondoUser.jpg); */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: 90%; */
 }
 
-h1 {
-  width: 60%;
-}
-
-p {
-  width: 60%;
+#cardPerfil {
+  border: 0.2em solid #0075bb;
+  border-radius: 2em;
+  font-size: xx-large;
   font-weight: bold;
-  color: darkred;
+  color: black;
+  background-color: #a1a7b2;
+}
+
+.tituloPerfil {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }

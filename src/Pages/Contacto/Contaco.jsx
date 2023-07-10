@@ -3,24 +3,32 @@ import { Modal, Button } from "react-bootstrap";
 import "./Contacto.css";
 
 export const InfoContacto = () => {
+  // Estado para controlar la apertura/cierre del modal
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  // Estado para controlar si se ha enviado el mensaje
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
+  // Funcion para abrir el modal
   const openModal = () => {
     setModalIsOpen(true);
   };
 
+  // Funcion para cerrar el modal
   const closeModal = () => {
     setModalIsOpen(false);
   };
 
+  // Maneja el envio del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Marcar el mensaje como enviado
     setMensajeEnviado(true);
+    // Cerrar el modal despues de enviar el formulario
     closeModal();
   };
 
+  // Efecto que reinicia el estado de mensaje enviado despues de 2 segundos
   useEffect(() => {
     if (mensajeEnviado) {
       setTimeout(() => {
@@ -42,37 +50,41 @@ export const InfoContacto = () => {
         </div>
       </div>
 
-      <Modal
-        show={modalIsOpen}
-        onHide={closeModal}
-        dialogClassName="modal-custom"
-      >
+      {/* Modal */}
+      <Modal show={modalIsOpen} onHide={closeModal} dialogClassName="modal-custom">
+        {/* Encabezado del modal */}
         <Modal.Header closeButton>
           <Modal.Title>Formulario de contacto</Modal.Title>
         </Modal.Header>
 
+        {/* Contenido del modal */}
         <Modal.Body>
           <form onSubmit={handleSubmit}>
+            {/* Campo de nombre */}
             <div className="form-group">
               <label>Nombre:</label>
               <input type="text" className="form-control" />
             </div>
 
+            {/* Campo de email */}
             <div className="form-group">
               <label>Email:</label>
               <input type="email" className="form-control" />
             </div>
 
+            {/* Campo de telefono */}
             <div className="form-group">
               <label>Teléfono:</label>
               <input type="tel" className="form-control" />
             </div>
 
+            {/* Campo de mensaje */}
             <div className="form-group">
               <label>Mensaje:</label>
               <textarea className="form-control" rows="4" />
             </div>
 
+            {/* Botones del modal */}
             <Button variant="secondary" onClick={closeModal}>
               Cerrar
             </Button>
@@ -83,6 +95,7 @@ export const InfoContacto = () => {
         </Modal.Body>
       </Modal>
 
+      {/* Mensaje enviado */}
       {mensajeEnviado && (
         <div className="mensajeEnviado-overlay">
           <div className="mensajeEnviado">
