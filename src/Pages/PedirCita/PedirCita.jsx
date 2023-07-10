@@ -107,8 +107,10 @@ export const PedirCita = () => {
 
   // Funcion para verificar si una fecha es un dia de la semana (lunes a viernes)
   const isWeekday = (date) => {
-    const day = date.getDay(); // Obtiene el número del día de la semana (0 para domingo, 1 para lunes, etc.)
-    return day >= 1 && day <= 5; // Retorna true si es un día de la semana (lunes a viernes)
+    // Obtiene el numero del dia de la semana (de 0 a 6)
+    const day = date.getDay(); 
+    // Devuelve true si es un dia entre semana
+    return day >= 1 && day <= 5; 
   };
 
   return (
@@ -119,7 +121,7 @@ export const PedirCita = () => {
       {/* Muestra el mensaje de exito si hubiera */}
       {successMessage && <p>{successMessage}</p>}
 
-      {/* Muestra el mensaje de no citas disponibles, si corresponde */}
+      {/* Muestra el mensaje de no citas disponibles si no las hay */}
       {noCitasDisponibles && (
         <p>
           No hay citas disponibles en esa fecha y hora, por favor introduzca

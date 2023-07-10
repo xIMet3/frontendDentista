@@ -12,19 +12,27 @@ import "./MisCitas.css";
 function UpdateAppointments() {
   const { credentials } = useSelector(userData);
 
+  // Estado para almacenar las citas del usuario
   const [appointments, setAppointments] = useState([]);
+
+  // Estado para controlar la visibilidad del modal
   const [showModal, setShowModal] = useState(false);
+
+  // Estado para almacenar la cita seleccionada
   const [selectedAppointment, setSelectedAppointment] = useState(null);
+
+  // Estado para almacenar la cita modificada
   const [modifiedAppointment, setModifiedAppointment] = useState({
     id: "",
     time: "",
     date: "",
     description: "",
   });
-
-  const [filterDate, setFilterDate] = useState(null); // Nuevo estado para almacenar la fecha del filtro
+  // Nuevo estado para almacenar la fecha del filtro
+  const [filterDate, setFilterDate] = useState(null);
 
   useEffect(() => {
+    // Obtener las citas del usuario al cargar el componente
     const getUserAppointments = async () => {
       try {
         const appointments = await fetchUserAppointments(credentials.token);
@@ -38,6 +46,7 @@ function UpdateAppointments() {
   }, []);
 
   const handleModifyAppointment = (appointment) => {
+    // Manejar la selección de una cita y mostrar el modal de modificación
     setSelectedAppointment(appointment);
     setShowModal(true);
     setModifiedAppointment({
@@ -49,25 +58,39 @@ function UpdateAppointments() {
   };
 
   const handleDeleteAppointment = async (appointmentId) => {
+    // Manejar la eliminación de una cita
+
     try {
+      // Llamada a la API para eliminar la cita utilizando el ID de la cita y el token
       await deleteAppointment(appointmentId, credentials.token);
+      // Filtra las citas actualizadas, excluyendo la cita que se elimino
       const updatedAppointments = appointments.filter(
         (appointment) => appointment.id !== appointmentId
       );
+      // Actualiza el estado de las citas con las citas actualizadas
       setAppointments(updatedAppointments);
     } catch (error) {
       console.error("Error al eliminar la cita:", error);
     }
   };
 
+
   const handleSaveChanges = async () => {
+    // Maneja la actualizacion de una cita
+
     try {
+      // Actualiza la cita en el servidor mediante la API
       await updateAppointment(credentials.token, modifiedAppointment);
+
+      // Cerrar el modal de modificacion de cita
       setShowModal(false);
+
+      // Obtener las citas actualizadas del usuario desde el servidor
       const updatedAppointments = await fetchUserAppointments(
         credentials.token
       );
 
+      // Filtrar las citas actualizadas segun la fecha de filtro (si esta seleccionada)
       const filteredAppointments = filterDate
         ? updatedAppointments.filter(
             (appointment) =>
@@ -76,6 +99,7 @@ function UpdateAppointments() {
           )
         : updatedAppointments;
 
+      // Actualiza el estado de las citas con las citas filtradas o sin filtrar
       setAppointments(filteredAppointments);
     } catch (error) {
       console.error("Error al guardar los cambios:", error);
@@ -88,18 +112,23 @@ function UpdateAppointments() {
 
       {/* Filtro de fecha */}
       <div className="filterContainer">
-        <label htmlFor="filterDate"></label>
+        <label htmlFor="filterDate"></label>{" "}
+        {/* Input de fecha */}
         <input
           type="date"
           id="filterDate"
           value={filterDate ? filterDate.toISOString().substring(0, 10) : ""}
           onChange={(e) => {
-            const selectedDate = e.target.value;
+            // Obtiene la fecha seleccionada del input
+            const selectedDate = e.target.value; 
+            // Actualiza el estado filterDate con la fecha seleccionada convertida en objeto Date o null
+            // si no hay fecha seleccionada
             setFilterDate(selectedDate ? new Date(selectedDate) : null);
           }}
         />
       </div>
 
+      {/* Renderiza las citas */}
       {appointments.length ? (
         appointments
           .filter((appointment) => {
@@ -123,6 +152,7 @@ function UpdateAppointments() {
               </p>
               <p>Fecha: {new Date(appointment.date).toLocaleString()}</p>
               <p>Descripción: {appointment.description}</p>
+              {/* Botón para modificar cita */}
               <Button
                 variant="primary"
                 className="botonModificar"
@@ -130,6 +160,7 @@ function UpdateAppointments() {
               >
                 Modificar Cita
               </Button>
+              {/* Boton para eliminar cita */}
               <Button
                 variant="danger"
                 className="botonEliminar"
@@ -143,6 +174,7 @@ function UpdateAppointments() {
         <p className="loadingAppointments">No tiene citas pendientes</p>
       )}
 
+      {/* Modal para modificar cita */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Modificar Cita</Modal.Title>

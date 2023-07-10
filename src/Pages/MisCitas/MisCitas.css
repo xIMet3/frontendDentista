@@ -25,9 +25,11 @@ h1 {
 }
 
 .filterContainer {
-  width: 50%;
+  width: auto;
+  max-width: 20em;
   border: 0;
   margin-left: 3em;
+  margin-right: 3em;
 }
 
 #filterDate {

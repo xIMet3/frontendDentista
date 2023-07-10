@@ -42,7 +42,7 @@ export const InfoContacto = () => {
       <div className="cardContacto">
         <div className="contenidoContacto">
           <p>Dirección: Av. General Muelas Sanas, 32</p>
-          <p>Provicia: Valencia - CP: 46006</p>
+          <p>Provicia: Valencia - CP: 46000</p>
           <p>Horario: De Lunes a Viernes de 9:00 a 14:00 y de 16:00 a 21:00</p>
           <p className="emailContacto" onClick={openModal}>
             Email: ximo@falsomail.com
