@@ -112,7 +112,7 @@ export const PedirCita = () => {
   };
 
   return (
-    <div>
+    <div className="pedirCitaEntera">
       {/* Muestra el mensaje de error si hubiera */}
       {error && <p>{error}</p>}
 

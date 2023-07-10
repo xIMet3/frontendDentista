@@ -81,7 +81,11 @@ export const InfoContacto = () => {
             {/* Campo de mensaje */}
             <div className="form-group">
               <label>Mensaje:</label>
-              <textarea className="form-control" rows="4" />
+              <textarea 
+              className="form-control" 
+              rows="4" 
+              maxLength="80"
+              />
             </div>
 
             {/* Botones del modal */}
