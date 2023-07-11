@@ -45,10 +45,10 @@ export const Login = () => {
 
   return (
     <>
-      <Container>
+      <Container className="loginEntero">
         <Row className="formularioLogin justify-content-center m-5">
-          <Col xs={10} md={6}>
-            <Form>
+          <Col xs={10} md={6} className="">
+            <Form className="h-100 d-flex flex-column align-items-center justify-content-center">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control

@@ -1,5 +1,13 @@
+.loginEntero {
+    min-height: 90vh;
+    min-width: 100vw;
+    background-image: url(../../../img/fachadaClinica.jpg);
+}
+
 .formularioLogin {
     font-weight: bold;
     color: darkred;
     text-decoration: none;
+    min-height: 50vh;
+    width: auto;
 }
