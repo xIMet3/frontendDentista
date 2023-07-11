@@ -24,7 +24,7 @@ export const Header = () => {
   return (
     <div className="navbarComun">
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" collapseOnSelect>
-        <Container>
+        <Container id="barraEntera">
           <Navbar.Brand>
             <BotonCambiaVista2 path={"/"} name={"GEEKSDENT"} />
           </Navbar.Brand>

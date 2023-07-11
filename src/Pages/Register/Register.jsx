@@ -50,7 +50,7 @@ export const Register = () => {
 
   return (
     <>
-      <Container>
+      <Container id="registerEntera">
         <Row className="formularioRegister justify-content-center m-5">
           <Col xs={10} md={6}>
             <Form>

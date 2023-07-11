@@ -1,3 +1,10 @@
+#registerEntera {
+    min-width: 100vw;
+    min-height: 90vh;
+    background-image: url(../../../img/fachadaClinica.jpg);
+    background-size: cover;
+}
+
 .formularioRegister {
     font-weight: bold;
     color: darkred;

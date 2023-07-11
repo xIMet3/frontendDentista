@@ -2,6 +2,8 @@
   font-size: large;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .navbarComun {
@@ -25,4 +27,19 @@ button:hover {
   background-color: darkred;
   transition: 0.3s;
   scale: 1.2;
+}
+
+#barraEntera {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
 }

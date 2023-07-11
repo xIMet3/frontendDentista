@@ -1,6 +1,6 @@
 .botonCambiaVistaDesign {
   height: 2em;
-  width: 6em;
+  min-width: 6em;
   background-color: transparent;
   margin: 0.5em;
   border-radius: 2em;
@@ -11,6 +11,8 @@
   justify-content: center;
   color: #0075bb;
   cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .botonCambiaVistaDesign:hover {
