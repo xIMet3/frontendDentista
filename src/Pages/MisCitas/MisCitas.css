@@ -1,6 +1,7 @@
 .bodyVista {
   min-height: 90vh;
   background-image: url(../../../img/fachadaClinica.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   /* background-size: 80%; */
@@ -8,9 +9,15 @@
 
 .cardCita {
   height: auto;
-  max-width: 50em;
+  max-width: 25em;
   margin-left: 1em;
   padding: 2em;
+  font-size: large;
+  font-weight: bold;
+  border: 0.05em solid black;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 3em;
 }
 
 h1 {

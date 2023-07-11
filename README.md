@@ -42,7 +42,7 @@ Para alcanzar el objetivo se han incluido las vistas para cumplir con la funcion
 ![todosUsuarios](./img/todosUsuarios.png)
 
 #### Contacto:
-![contacto](./img/Contacto.png)
+![contacto](./img/contacto.png)
 
 
 

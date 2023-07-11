@@ -1,9 +1,9 @@
 .paginaEntera {
   max-width: 100vw;
-  background-image: url(../../../img/muelaTatoo.png);
+  background-image: url(../../../img/recepcionClinica.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,20 +16,21 @@
 
 .zonaCards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 0;
   height: 100%;
 }
 
 .bodyCard1 {
-  background-image: url(../../../img/fondoCardTratamiento.jpeg);
+  background-image: url(../../../img/fondoCardMuela2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
-.card1 {
-  width: auto;
-}
+
